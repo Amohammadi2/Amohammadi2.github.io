@@ -1,15 +1,17 @@
 h1{
-  color: orange;
-  width: 60%;
-  padding: 60px 0px 60px 0px;
-  text-align: center;
-  width: 80%;
-  margin: auto;
-  border: 1px solid orange;
-  transition: all .09s ease-in;
+    border: 1px solid orange;
+    color: orange;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+    width: 80%;
+    margin: auto;
+    margin-top: 40vh;
+    margin-bottom: 50vh;
+    transition: all .09s ease-in;
 }
 
-h1:hover{ /* hover means when your mouse enters the element */
-  background-color: orange;
-  color: white;
+h1:hover{
+    background-color: orange;
+    color: white;
 }
