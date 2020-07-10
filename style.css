@@ -1,0 +1,15 @@
+h1{
+  color: orange;
+  width: 60%;
+  padding: 60px 0px 60px 0px;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  border: 1px solid orange;
+  transition: all .09s ease-in;
+}
+
+h1:hover{ /* hover means when your mouse enters the element */
+  background-color: orange;
+  color: white;
+}
