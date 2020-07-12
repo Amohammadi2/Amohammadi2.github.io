@@ -1,38 +1,38 @@
-html, body{
-  margin: 0;
-  padding: 0;
-}
+body, html {padding: 0;margin: 0;}
+
 #headerbox{
   width: 100%;
-  background-image: url(http://s12.picofile.com/file/8402672818/web_3706562_1920.jpg)
+  background-image: url(http://s12.picofile.com/file/8402672818/web_3706562_1920.jpg)  
+}
+
+#header{
+  padding-top: 40px;
+  padding-bottom: 60px;
+  background-color: rgba(12,12,12,0.46);
+  transition: all .09s ease-in;
+}
+
+#header:hover{
+  background-color: rgba(12,12,12,0.75);
 }
 
 #headerbox h1{
-  margin-top: 0;
-  padding-top: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-family: 'sego ui'
+}
+
+#headerbox h2{
+  margin: 0;
+  color: white;
+  text-align: center;
+  font-family: 'sego ui';
+  font-size: 14.5px;
+  margin-top: 15px;
 }
 
 #headerbox h1 a{
   color: white !important;
   text-decoration: none;
-}
-
-#headerbox h1{
-  text-align: right;
-  padding-top: 20px;
-  padding-right: 45px;
-  font-family: 'sego ui';
-}
-
-#headerbox h2{
-  padding-right: 45px;
-  padding-bottom: 25vh;
-  font-size: 16px;
-  text-align: right;
-  color: rgb(250,250,250);
-  font-family: 'sego ui';
-}
-
-#header{
-  background-color: rgb(10,10,10, 0.70)
 }
