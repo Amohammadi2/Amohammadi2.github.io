@@ -1,0 +1,20 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "my portfolio website",
+  "main": "./src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rollup --config ./rollup.config.js",
+    "build-scss": "sass ./public/build"
+  },
+  "author": "Ashkan Mohammadi",
+  "license": "MIT",
+  "dependencies": {
+    "rollup": "^2.41.1",
+    "rollup-plugin-scss": "^2.6.1"
+  },
+  "devDependencies": {
+    "rollup-plugin-serve": "^1.1.0"
+  }
+}
