@@ -1,20 +1,23 @@
 {
-  "name": "portfolio",
+  "name": "svelte-app",
   "version": "1.0.0",
-  "description": "my portfolio website",
-  "main": "./src/app.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "rollup --config ./rollup.config.js",
-    "build-scss": "sass ./public/build"
-  },
-  "author": "Ashkan Mohammadi",
-  "license": "MIT",
-  "dependencies": {
-    "rollup": "^2.41.1",
-    "rollup-plugin-scss": "^2.6.1"
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public --no-clear"
   },
   "devDependencies": {
-    "rollup-plugin-serve": "^1.1.0"
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0"
+  },
+  "dependencies": {
+    "sirv-cli": "^1.0.0"
   }
 }
