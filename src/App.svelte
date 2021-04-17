@@ -167,4 +167,10 @@ background: linear-gradient(132deg, rgba(95,211,212,1) 0%, rgba(37,54,71,1) 100%
 			text-shadow: 0px 0px 0px rgb(255, 255, 255);
 		}
 	}
+
+	@media only screen and (max-width: 750px) {
+		.main-grid {
+			grid-template-columns: 1fr;
+		}
+	}
 </style>
