@@ -1,30 +1,39 @@
 <script>
-	export let name;
+	import IconicButton from "./components/buttons/IconicButton.svelte";
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+<header class="header">
+	<h1 class="title">
+		اشکان محمدی
+	</h1>
+	<p class="description">
+		توسعه دهنده وب و علاقه مند به تکنولوژی
+	</p>
+	<div class="btn-group">
+		<IconicButton text="پروژه ها" icon_class="tasks"/>
+		<IconicButton text="ارتباط با من" icon_class="phone-square"/>
+	</div>
+</header>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
+	:global(body) {
+		padding: 0;
+		margin: 0;
 	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
+	.header {
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+	.header .title {
+		font-size: 45px;
+		margin-bottom: 5px;
+	}
+	.header .description {
+		color: rgb(45, 45, 45);
 	}
 </style>
