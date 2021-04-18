@@ -61,3 +61,13 @@ button:not(:disabled):active {
 button:focus {
 	border-color: #666;
 }
+
+@keyframes ripple_grow {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		transform: scale(130);
+		opacity: 0.20;
+	}
+}

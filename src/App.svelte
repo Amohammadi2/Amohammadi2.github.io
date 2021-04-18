@@ -24,6 +24,26 @@
 </script>
 
 <div class="main-grid">
+	<header class="header">
+		<div class="user-profile">
+			<img src="./img/profile.jpg" alt="prof"/>
+		</div>
+		<div class="link-list">
+			<span class="fa fa-facebook-square"></span>
+			<span class="fa fa-whatsapp"></span>
+			<span class="fa fa-telegram"></span>
+		</div>
+		<h1 class="title">
+			اشکان محمدی
+		</h1>
+		<p class="description">
+			توسعه دهنده وب و علاقه مند به تکنولوژی
+		</p>
+		<div class="btn-group">
+			<IconicButton text="پروژه ها" icon_class="tasks"/>
+			<IconicButton text="ارتباط با من" icon_class="phone-square"/>
+		</div>
+	</header>
 	<div class="posts-container">
 		<div>
 			<h1>جدید ترین نوشته ها</h1>
@@ -75,28 +95,12 @@
 			</div>
 		</div>
 	</div>
-	<header class="header">
-		<h1 class="title">
-			اشکان محمدی
-		</h1>
-		<p class="description">
-			توسعه دهنده وب و علاقه مند به تکنولوژی
-		</p>
-		<div class="btn-group">
-			<IconicButton text="پروژه ها" icon_class="tasks"/>
-			<IconicButton text="ارتباط با من" icon_class="phone-square"/>
-		</div>
-	</header>
 </div>
 
 <style>
 	:global(body) {
 		padding: 0;
 		margin: 0;
-		background: rgb(95,211,212);
-background: linear-gradient(132deg, rgba(95,211,212,1) 0%, rgba(37,54,71,1) 100%);
-		background-attachment: fixed;
-		background-repeat: no-repeat no-repeat;
 	}
 
 	h1 { 
@@ -112,7 +116,7 @@ background: linear-gradient(132deg, rgba(95,211,212,1) 0%, rgba(37,54,71,1) 100%
 		margin-left: 50%;
 		transform: translateX(-50%);
 		width: 50px;
-		background-color: rgba(255, 255, 255, 0.342);
+		background-color: rgb(32, 204, 147);
 	}
 
 	.main-grid {
@@ -120,21 +124,48 @@ background: linear-gradient(132deg, rgba(95,211,212,1) 0%, rgba(37,54,71,1) 100%
 		grid-template-columns: 1fr 1fr;
 	}
 
+	.link-list {
+		font-size: 32px;
+		margin-top: 20px;
+		display: flex;
+		flex-direction: row;
+		justify-content:space-between;
+		width: 130px;
+		color: rgb(44, 44, 44);
+	}
+
+	.link-list * {
+		user-select: none;
+		cursor: pointer;
+	}
+
 	.posts-container h1 {
-		color: white;
+		color: black;
 		text-align: center;
 	}
 
 	.posts-container .card {
-		background-color: rgba(255, 255, 255, 0.377);
+		background-color: rgb(249, 249, 249);
 		box-sizing: border-box;
 		padding: 8px 15px;
 		width: 80%;
 		margin: 20px 10%;
 		border-radius: 5px;
-		color: white;
+		color: black;
 		direction: rtl;
 		opacity: 0;
+	}
+
+	.user-profile{
+		width: 150px;
+		height: 150px;
+		overflow: hidden;
+		border-radius: 50%;
+	}
+
+	.user-profile img {
+		width: 100%;
+		height: 100%;
 	}
 
 	.header {
@@ -144,12 +175,12 @@ background: linear-gradient(132deg, rgba(95,211,212,1) 0%, rgba(37,54,71,1) 100%
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		color: rgb(255, 255, 255);
+		color: black;
 	}
 	.header .title {
 		font-size: 45px;
 		margin-bottom: 5px;
-		animation: title_animation 1s infinite;
+		margin-top: -2px;
 	}
 
 	.btn-group {
@@ -157,15 +188,6 @@ background: linear-gradient(132deg, rgba(95,211,212,1) 0%, rgba(37,54,71,1) 100%
 		flex-direction: row;
 		justify-content: space-between;
 		width: 250px;
-	}
-
-	@keyframes title_animation {
-		50% {
-			text-shadow: 0px 0px 20px rgb(255, 255, 255);
-		}
-		100% {
-			text-shadow: 0px 0px 0px rgb(255, 255, 255);
-		}
 	}
 
 	@media only screen and (max-width: 750px) {
