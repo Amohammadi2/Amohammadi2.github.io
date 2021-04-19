@@ -62,4 +62,12 @@
         font-size: 30px;
         margin-right: 8px;
     }
+
+    @media only screen and (max-width: 750px) {
+        .iconic-btn {
+			padding-top: 10px;
+			padding-bottom: 10px;
+            margin-top: 10px;
+        }
+    }
 </style>

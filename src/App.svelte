@@ -2,6 +2,9 @@
 	import { onMount } from "svelte";
 	import anime from "animejs/lib/anime.es";
 	import IconicButton from "./components/buttons/IconicButton.svelte";
+	import SoroushIcon from "./components/icons/SoroushIcon.svelte";
+	import RubikaIcon from "./components/icons/RubikaIcon.svelte";
+	import VirgoolIcon from "./components/icons/VirgoolIcon.svelte";
 
 	function playStartAnimation() {
 		anime({
@@ -29,78 +32,36 @@
 			<img src="./img/profile.jpg" alt="prof"/>
 		</div>
 		<div class="link-list">
-			<span class="fa fa-facebook-square"></span>
-			<span class="fa fa-whatsapp"></span>
-			<span class="fa fa-telegram"></span>
+			<SoroushIcon />
+			<VirgoolIcon />
+			<RubikaIcon />
 		</div>
 		<h1 class="title">
 			اشکان محمدی
 		</h1>
 		<p class="description">
-			توسعه دهنده وب و علاقه مند به تکنولوژی
+			توسعه دهنده وب، علاقه مند به هوش مصنوعی و نویسندگی
 		</p>
 		<div class="btn-group">
+			<IconicButton text="مقالات" icon_class="file-text"
+				style="background-color: rgba(256, 256, 256, 0.3); color: rgb(32, 204, 147); border: 1px solid rgb(32, 204, 147);"/>
 			<IconicButton text="پروژه ها" icon_class="tasks"/>
 			<IconicButton text="ارتباط با من" icon_class="phone-square"/>
 		</div>
 	</header>
-	<div class="posts-container">
-		<div>
-			<h1>جدید ترین نوشته ها</h1>
-		</div>
-		<div style="margin-top: 100px;">
-			<div class="card">
-				<h3>برنامه نویسی</h3>
-				<p>
-					یکی از مهم ترین مهارت هایی که یک انسان باید داشته
-					باشید مهارت برنامه نویسی است چرا که نحوه فکر کردن و
-					چاره اندیشی برای مشکلات را به ما یاد می دهد.
-					برنامه نویسی یک چیز بسیار فوق العاده است که بلد بودنش حرف ندارد
-					هر کسی می تواند یک برنامه نویس شود و لذت دستور دادن به کامپیوتر
-					را تجربه کند.
-				</p>
-			</div>
-			<div class="card">
-				<h3>برنامه نویسی</h3>
-				<p>
-					یکی از مهم ترین مهارت هایی که یک انسان باید داشته
-					باشید مهارت برنامه نویسی است چرا که نحوه فکر کردن و
-					چاره اندیشی برای مشکلات را به ما یاد می دهد.
-					برنامه نویسی یک چیز بسیار فوق العاده است که بلد بودنش حرف ندارد
-					هر کسی می تواند یک برنامه نویس شود و لذت دستور دادن به کامپیوتر
-					را تجربه کند.
-				</p>
-			</div>
-			<div class="card">
-				<h3>برنامه نویسی</h3>
-				<p>
-					یکی از مهم ترین مهارت هایی که یک انسان باید داشته
-					باشید مهارت برنامه نویسی است چرا که نحوه فکر کردن و
-					چاره اندیشی برای مشکلات را به ما یاد می دهد.
-					برنامه نویسی یک چیز بسیار فوق العاده است که بلد بودنش حرف ندارد
-					هر کسی می تواند یک برنامه نویس شود و لذت دستور دادن به کامپیوتر
-					را تجربه کند.
-				</p>
-			</div>
-			<div class="card">
-				<h3>برنامه نویسی</h3>
-				<p>
-					یکی از مهم ترین مهارت هایی که یک انسان باید داشته
-					باشید مهارت برنامه نویسی است چرا که نحوه فکر کردن و
-					چاره اندیشی برای مشکلات را به ما یاد می دهد.
-					برنامه نویسی یک چیز بسیار فوق العاده است که بلد بودنش حرف ندارد
-					هر کسی می تواند یک برنامه نویس شود و لذت دستور دادن به کامپیوتر
-					را تجربه کند.
-				</p>
-			</div>
-		</div>
-	</div>
 </div>
 
 <style>
 	:global(body) {
 		padding: 0;
 		margin: 0;
+		background: url(/img/background.png);
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+	:global(.p-icon) {
+		cursor: pointer;
 	}
 
 	h1 { 
@@ -121,7 +82,7 @@
 
 	.main-grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr;
 	}
 
 	.link-list {
@@ -139,23 +100,6 @@
 		cursor: pointer;
 	}
 
-	.posts-container h1 {
-		color: black;
-		text-align: center;
-	}
-
-	.posts-container .card {
-		background-color: rgb(249, 249, 249);
-		box-sizing: border-box;
-		padding: 8px 15px;
-		width: 80%;
-		margin: 20px 10%;
-		border-radius: 5px;
-		color: black;
-		direction: rtl;
-		opacity: 0;
-	}
-
 	.user-profile{
 		width: 150px;
 		height: 150px;
@@ -164,8 +108,8 @@
 	}
 
 	.user-profile img {
-		width: 100%;
-		height: 100%;
+		width: 150px;
+		height: 180px;
 	}
 
 	.header {
@@ -182,17 +126,23 @@
 		margin-bottom: 5px;
 		margin-top: -2px;
 	}
+	.header .description {
+		direction: rtl;
+	}
 
 	.btn-group {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		width: 250px;
+		width: 360px;
 	}
 
 	@media only screen and (max-width: 750px) {
 		.main-grid {
 			grid-template-columns: 1fr;
+		}
+		.btn-group {
+			flex-direction: column-reverse;
 		}
 	}
 </style>
