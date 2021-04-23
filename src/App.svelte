@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from "svelte";
 	import anime from "animejs/lib/anime.es";
+	import Splide from "@splidejs/splide";
 	import IconicButton from "./components/buttons/IconicButton.svelte";
 	import SoroushIcon from "./components/icons/SoroushIcon.svelte";
 	import RubikaIcon from "./components/icons/RubikaIcon.svelte";
@@ -16,8 +17,30 @@
 		});
 	}
 
+	function InitSliders() {
+		new Splide(".splide", {
+			type: "slide",
+			perPage: 5,
+			focus: "center",
+			gap: "2rem",
+			pagination: false,
+			breakpoints: {
+				'1100': {
+					perPage: 4,
+				},
+				'850': {
+					perPage: 2,
+				},
+				'470': {
+					perPage: 1,
+				}
+			}
+		}).mount();
+	}
+
 	onMount(() => {
 		playStartAnimation();
+		InitSliders();
 	});
 </script>
 
@@ -49,10 +72,7 @@
 			<Biography />
 		</div>
 	</section>
-	<section>
-		<h1 align="center">خدماتی که ارائه میدم</h1>
-	</section>
-	<section class="skill-card-container container grid row-3">
+	<!-- <section class="skill-card-container container grid row-3">
 		<SkillCard vectorImg="Backend.svg">
 			<section slot="body">
 				<h3 align="center" class="card-header">توسعه Back-end</h3>
@@ -68,7 +88,60 @@
 				<h3 align="center" class="card-header">ML & AI</h3>
 			</section>
 		</SkillCard>
-	</section>
+	</section> -->
+</div>
+
+<section>
+	<h1 align="center">خدماتی که ارائه میدم</h1>
+</section>
+
+<div class="splide">
+	<div class="splide__track">
+		<ul class="splide__list">
+			<li class="splide__slide">
+				<SkillCard vectorImg="Backend.svg">
+					<section slot="body">
+						<h3 align="center" class="card-header">توسعه Back-end</h3>
+					</section>
+				</SkillCard>
+			</li>
+			<li class="splide__slide">
+				<SkillCard vectorImg="Backend.svg">
+					<section slot="body">
+						<h3 align="center" class="card-header">توسعه Back-end</h3>
+					</section>
+				</SkillCard>
+			</li>
+			<li class="splide__slide">
+				<SkillCard vectorImg="Backend.svg">
+					<section slot="body">
+						<h3 align="center" class="card-header">توسعه Back-end</h3>
+					</section>
+				</SkillCard>
+			</li>
+			<li class="splide__slide">
+				<SkillCard vectorImg="Backend.svg">
+					<section slot="body">
+						<h3 align="center" class="card-header">توسعه Back-end</h3>
+					</section>
+				</SkillCard>
+			</li>
+			<li class="splide__slide">
+				<SkillCard vectorImg="Backend.svg">
+					<section slot="body">
+						<h3 align="center" class="card-header">توسعه Back-end</h3>
+					</section>
+				</SkillCard>
+			</li>
+			<li class="splide__slide">
+				<SkillCard vectorImg="Backend.svg">
+					<section slot="body">
+						<h3 align="center" class="card-header">توسعه Back-end</h3>
+					</section>
+				</SkillCard>
+			</li>
+		</ul>
+	</div>
 </div>
 
 <style>

@@ -9,7 +9,7 @@
         <slot name="body"></slot>
     </main>
     <footer>
-        <IconicButton text="جزئیات" icon_class="tasks" style="width: 100%"/>
+        <IconicButton text="جزئیات" icon_class="tasks" style="width: 200px; margin: auto;"/>
     </footer>
 </div>
 
@@ -19,7 +19,6 @@
         display: flex;
         flex-direction: column;
         justify-content:center;
-        box-shadow: 0px 2px 30px 1px rgb(230, 230, 230);
         margin: 5px 8px;
     }
     img {
@@ -34,10 +33,4 @@
         margin-top: 15px;
     }
 
-    @media only screen and (max-width:600px) {
-        .skill-card {
-            width: 60%;
-            margin: 10px auto;
-        }
-    }
 </style>
