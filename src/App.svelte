@@ -5,19 +5,14 @@
 	import SoroushIcon from "./components/icons/SoroushIcon.svelte";
 	import RubikaIcon from "./components/icons/RubikaIcon.svelte";
 	import VirgoolIcon from "./components/icons/VirgoolIcon.svelte";
+	import Biography from "./components/static/Biography.svelte";
+	import SkillCard from "./components/cards/SkillCard.svelte";
 
 	function playStartAnimation() {
 		anime({
 			targets: "header",
 			translateY: "-=50px",
 			duration: 800,
-		});
-		anime({
-			targets: ".card",
-			opacity: 1,
-			translateY: "-=50px",
-			duration: 800,
-			delay: anime.stagger(100),
 		});
 	}
 
@@ -49,6 +44,31 @@
 			<IconicButton text="ارتباط با من" icon_class="phone-square"/>
 		</div>
 	</header>
+	<section class="green-box">
+		<div class="container rtl">
+			<Biography />
+		</div>
+	</section>
+	<section>
+		<h1 align="center">خدماتی که ارائه میدم</h1>
+	</section>
+	<section class="skill-card-container container grid row-3">
+		<SkillCard vectorImg="Backend.svg">
+			<section slot="body">
+				<h3 align="center" class="card-header">توسعه Back-end</h3>
+			</section>
+		</SkillCard>
+		<SkillCard vectorImg="Backend.svg">
+			<section slot="body">
+				<h3 align="center" class="card-header">توسعه Front-end</h3>
+			</section>
+		</SkillCard>
+		<SkillCard vectorImg="Backend.svg">
+			<section slot="body">
+				<h3 align="center" class="card-header">ML & AI</h3>
+			</section>
+		</SkillCard>
+	</section>
 </div>
 
 <style>
@@ -114,7 +134,7 @@
 
 	.header {
 		width: 100%;
-		height: 100vh;
+		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -137,12 +157,55 @@
 		width: 360px;
 	}
 
+	.container {
+		width: 60%;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		margin-left: 20%;
+		text-align: justify;
+	}
+	.rtl {
+		direction: rtl;
+	}
+	.green-box {
+		background-color:rgb(32, 204, 147);
+		color: white;
+	}
+
+	.grid {
+		display: grid;
+	}
+	
+	.row-3 {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	.card-header {
+		margin: 0 !important;
+	}
+
+	@media only screen and (max-width: 825px) {
+		.skill-card-container {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
 	@media only screen and (max-width: 750px) {
 		.main-grid {
 			grid-template-columns: 1fr;
 		}
 		.btn-group {
 			flex-direction: column-reverse;
+		}
+			.container {
+			width: 90%;
+			margin-left: 5%;
+		}
+	}
+
+	@media only screen and (max-width: 600px) {
+		.skill-card-container {
+			grid-template-columns: 1fr;
 		}
 	}
 </style>
