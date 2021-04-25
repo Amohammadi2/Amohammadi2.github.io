@@ -11,9 +11,16 @@
 
 	function playStartAnimation() {
 		anime({
-			targets: "header",
-			translateY: "-=50px",
-			duration: 800,
+			targets: "#s-icon",
+			duration: 200,
+			translateX: "-=50px",
+			easing: "easeInOutSine",
+		});
+		anime({
+			targets: "#r-icon",
+			duration: 200,
+			translateX: "+=50px",
+			easing: "easeInOutSine",
 		});
 	}
 
@@ -26,16 +33,25 @@
 			pagination: false,
 			breakpoints: {
 				'1100': {
-					perPage: 4,
+					perPage: 3,
 				},
 				'850': {
-					perPage: 2,
-				},
-				'470': {
 					perPage: 1,
-				}
+				},
 			}
 		}).mount();
+	}
+
+	function displayCards() {
+		anime({
+			targets: ".skill-card",
+			duration: 600,
+			opacity: 1,
+		})
+	}
+
+	window.onscroll = event => {
+		if (window.scrollY > 380) displayCards();
 	}
 
 	onMount(() => {
@@ -50,9 +66,15 @@
 			<img src="./img/profile.jpg" alt="prof"/>
 		</div>
 		<div class="link-list">
-			<SoroushIcon />
-			<VirgoolIcon />
-			<RubikaIcon />
+			<span id="s-icon" style="transform: translateX(50px);">
+				<SoroushIcon />
+			</span>
+			<span id="v-icon">
+				<VirgoolIcon />
+			</span>
+			<span id="r-icon" style="transform: translateX(-50px);">
+				<RubikaIcon />
+			</span>
 		</div>
 		<h1 class="title">
 			اشکان محمدی

@@ -20,6 +20,7 @@
         flex-direction: column;
         justify-content:center;
         margin: 5px 8px;
+        opacity: 0;
     }
     img {
         width: 200px;
