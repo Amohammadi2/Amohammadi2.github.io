@@ -8327,7 +8327,7 @@ var app = (function () {
     const file = "src\\App.svelte";
 
     // (108:5) 
-    function create_body_slot_5(ctx) {
+    function create_body_slot_1(ctx) {
     	let section;
     	let h3;
 
@@ -8353,7 +8353,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_body_slot_5.name,
+    		id: create_body_slot_1.name,
     		type: "slot",
     		source: "(108:5) ",
     		ctx
@@ -8363,7 +8363,7 @@ var app = (function () {
     }
 
     // (115:5) 
-    function create_body_slot_4(ctx) {
+    function create_body_slot(ctx) {
     	let section;
     	let h3;
 
@@ -8389,153 +8389,9 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_body_slot_4.name,
-    		type: "slot",
-    		source: "(115:5) ",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (122:5) 
-    function create_body_slot_3(ctx) {
-    	let section;
-    	let h3;
-
-    	const block = {
-    		c: function create() {
-    			section = element("section");
-    			h3 = element("h3");
-    			h3.textContent = "توسعه Back-end";
-    			attr_dev(h3, "align", "center");
-    			attr_dev(h3, "class", "card-header svelte-wlaj5f");
-    			add_location(h3, file, 122, 6, 3050);
-    			attr_dev(section, "slot", "body");
-    			add_location(section, file, 121, 5, 3021);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, section, anchor);
-    			append_dev(section, h3);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(section);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_body_slot_3.name,
-    		type: "slot",
-    		source: "(122:5) ",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (129:5) 
-    function create_body_slot_2(ctx) {
-    	let section;
-    	let h3;
-
-    	const block = {
-    		c: function create() {
-    			section = element("section");
-    			h3 = element("h3");
-    			h3.textContent = "توسعه Back-end";
-    			attr_dev(h3, "align", "center");
-    			attr_dev(h3, "class", "card-header svelte-wlaj5f");
-    			add_location(h3, file, 129, 6, 3261);
-    			attr_dev(section, "slot", "body");
-    			add_location(section, file, 128, 5, 3232);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, section, anchor);
-    			append_dev(section, h3);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(section);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_body_slot_2.name,
-    		type: "slot",
-    		source: "(129:5) ",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (136:5) 
-    function create_body_slot_1(ctx) {
-    	let section;
-    	let h3;
-
-    	const block = {
-    		c: function create() {
-    			section = element("section");
-    			h3 = element("h3");
-    			h3.textContent = "توسعه Back-end";
-    			attr_dev(h3, "align", "center");
-    			attr_dev(h3, "class", "card-header svelte-wlaj5f");
-    			add_location(h3, file, 136, 6, 3472);
-    			attr_dev(section, "slot", "body");
-    			add_location(section, file, 135, 5, 3443);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, section, anchor);
-    			append_dev(section, h3);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(section);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_body_slot_1.name,
-    		type: "slot",
-    		source: "(136:5) ",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (143:5) 
-    function create_body_slot(ctx) {
-    	let section;
-    	let h3;
-
-    	const block = {
-    		c: function create() {
-    			section = element("section");
-    			h3 = element("h3");
-    			h3.textContent = "توسعه Back-end";
-    			attr_dev(h3, "align", "center");
-    			attr_dev(h3, "class", "card-header svelte-wlaj5f");
-    			add_location(h3, file, 143, 6, 3683);
-    			attr_dev(section, "slot", "body");
-    			add_location(section, file, 142, 5, 3654);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, section, anchor);
-    			append_dev(section, h3);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(section);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
     		id: create_body_slot.name,
     		type: "slot",
-    		source: "(143:5) ",
+    		source: "(115:5) ",
     		ctx
     	});
 
@@ -8585,18 +8441,6 @@ var app = (function () {
     	let t14;
     	let li1;
     	let skillcard1;
-    	let t15;
-    	let li2;
-    	let skillcard2;
-    	let t16;
-    	let li3;
-    	let skillcard3;
-    	let t17;
-    	let li4;
-    	let skillcard4;
-    	let t18;
-    	let li5;
-    	let skillcard5;
     	let current;
     	soroushicon = new SoroushIcon({ $$inline: true });
     	virgoolicon = new VirgoolIcon({ $$inline: true });
@@ -8629,49 +8473,13 @@ var app = (function () {
     	skillcard0 = new SkillCard({
     			props: {
     				vectorImg: "Frontend.svg",
-    				$$slots: { body: [create_body_slot_5] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	skillcard1 = new SkillCard({
-    			props: {
-    				vectorImg: "Backend.svg",
-    				$$slots: { body: [create_body_slot_4] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	skillcard2 = new SkillCard({
-    			props: {
-    				vectorImg: "Backend.svg",
-    				$$slots: { body: [create_body_slot_3] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	skillcard3 = new SkillCard({
-    			props: {
-    				vectorImg: "Backend.svg",
-    				$$slots: { body: [create_body_slot_2] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	skillcard4 = new SkillCard({
-    			props: {
-    				vectorImg: "Backend.svg",
     				$$slots: { body: [create_body_slot_1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	skillcard5 = new SkillCard({
+    	skillcard1 = new SkillCard({
     			props: {
     				vectorImg: "Backend.svg",
     				$$slots: { body: [create_body_slot] },
@@ -8726,18 +8534,6 @@ var app = (function () {
     			t14 = space();
     			li1 = element("li");
     			create_component(skillcard1.$$.fragment);
-    			t15 = space();
-    			li2 = element("li");
-    			create_component(skillcard2.$$.fragment);
-    			t16 = space();
-    			li3 = element("li");
-    			create_component(skillcard3.$$.fragment);
-    			t17 = space();
-    			li4 = element("li");
-    			create_component(skillcard4.$$.fragment);
-    			t18 = space();
-    			li5 = element("li");
-    			create_component(skillcard5.$$.fragment);
     			if (img.src !== (img_src_value = "./img/profile.jpg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "prof");
     			attr_dev(img, "class", "svelte-wlaj5f");
@@ -8779,14 +8575,6 @@ var app = (function () {
     			add_location(li0, file, 105, 3, 2523);
     			attr_dev(li1, "class", "splide__slide");
     			add_location(li1, file, 112, 3, 2736);
-    			attr_dev(li2, "class", "splide__slide");
-    			add_location(li2, file, 119, 3, 2947);
-    			attr_dev(li3, "class", "splide__slide");
-    			add_location(li3, file, 126, 3, 3158);
-    			attr_dev(li4, "class", "splide__slide");
-    			add_location(li4, file, 133, 3, 3369);
-    			attr_dev(li5, "class", "splide__slide");
-    			add_location(li5, file, 140, 3, 3580);
     			attr_dev(ul, "class", "splide__list");
     			add_location(ul, file, 104, 2, 2493);
     			attr_dev(div5, "class", "splide__track");
@@ -8839,18 +8627,6 @@ var app = (function () {
     			append_dev(ul, t14);
     			append_dev(ul, li1);
     			mount_component(skillcard1, li1, null);
-    			append_dev(ul, t15);
-    			append_dev(ul, li2);
-    			mount_component(skillcard2, li2, null);
-    			append_dev(ul, t16);
-    			append_dev(ul, li3);
-    			mount_component(skillcard3, li3, null);
-    			append_dev(ul, t17);
-    			append_dev(ul, li4);
-    			mount_component(skillcard4, li4, null);
-    			append_dev(ul, t18);
-    			append_dev(ul, li5);
-    			mount_component(skillcard5, li5, null);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -8868,34 +8644,6 @@ var app = (function () {
     			}
 
     			skillcard1.$set(skillcard1_changes);
-    			const skillcard2_changes = {};
-
-    			if (dirty & /*$$scope*/ 8) {
-    				skillcard2_changes.$$scope = { dirty, ctx };
-    			}
-
-    			skillcard2.$set(skillcard2_changes);
-    			const skillcard3_changes = {};
-
-    			if (dirty & /*$$scope*/ 8) {
-    				skillcard3_changes.$$scope = { dirty, ctx };
-    			}
-
-    			skillcard3.$set(skillcard3_changes);
-    			const skillcard4_changes = {};
-
-    			if (dirty & /*$$scope*/ 8) {
-    				skillcard4_changes.$$scope = { dirty, ctx };
-    			}
-
-    			skillcard4.$set(skillcard4_changes);
-    			const skillcard5_changes = {};
-
-    			if (dirty & /*$$scope*/ 8) {
-    				skillcard5_changes.$$scope = { dirty, ctx };
-    			}
-
-    			skillcard5.$set(skillcard5_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -8908,10 +8656,6 @@ var app = (function () {
     			transition_in(biography.$$.fragment, local);
     			transition_in(skillcard0.$$.fragment, local);
     			transition_in(skillcard1.$$.fragment, local);
-    			transition_in(skillcard2.$$.fragment, local);
-    			transition_in(skillcard3.$$.fragment, local);
-    			transition_in(skillcard4.$$.fragment, local);
-    			transition_in(skillcard5.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -8924,10 +8668,6 @@ var app = (function () {
     			transition_out(biography.$$.fragment, local);
     			transition_out(skillcard0.$$.fragment, local);
     			transition_out(skillcard1.$$.fragment, local);
-    			transition_out(skillcard2.$$.fragment, local);
-    			transition_out(skillcard3.$$.fragment, local);
-    			transition_out(skillcard4.$$.fragment, local);
-    			transition_out(skillcard5.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -8945,10 +8685,6 @@ var app = (function () {
     			if (detaching) detach_dev(div6);
     			destroy_component(skillcard0);
     			destroy_component(skillcard1);
-    			destroy_component(skillcard2);
-    			destroy_component(skillcard3);
-    			destroy_component(skillcard4);
-    			destroy_component(skillcard5);
     		}
     	};
 

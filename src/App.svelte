@@ -117,34 +117,6 @@
 					</section>
 				</SkillCard>
 			</li>
-			<li class="splide__slide">
-				<SkillCard vectorImg="Backend.svg">
-					<section slot="body">
-						<h3 align="center" class="card-header">توسعه Back-end</h3>
-					</section>
-				</SkillCard>
-			</li>
-			<li class="splide__slide">
-				<SkillCard vectorImg="Backend.svg">
-					<section slot="body">
-						<h3 align="center" class="card-header">توسعه Back-end</h3>
-					</section>
-				</SkillCard>
-			</li>
-			<li class="splide__slide">
-				<SkillCard vectorImg="Backend.svg">
-					<section slot="body">
-						<h3 align="center" class="card-header">توسعه Back-end</h3>
-					</section>
-				</SkillCard>
-			</li>
-			<li class="splide__slide">
-				<SkillCard vectorImg="Backend.svg">
-					<section slot="body">
-						<h3 align="center" class="card-header">توسعه Back-end</h3>
-					</section>
-				</SkillCard>
-			</li>
 		</ul>
 	</div>
 </div>
