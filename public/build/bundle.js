@@ -8200,14 +8200,14 @@ var app = (function () {
     			t1 = space();
     			footer = element("footer");
     			create_component(iconicbutton.$$.fragment);
-    			if (img.src !== (img_src_value = "/img/" + /*vectorImg*/ ctx[0])) attr_dev(img, "src", img_src_value);
+    			if (img.src !== (img_src_value = "img/" + /*vectorImg*/ ctx[0])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*vectorImg*/ ctx[0]);
     			attr_dev(img, "class", "svelte-1q04dzj");
     			add_location(img, file$1, 6, 4, 149);
     			attr_dev(main, "class", "body");
-    			add_location(main, file$1, 7, 4, 199);
+    			add_location(main, file$1, 7, 4, 198);
     			attr_dev(footer, "class", "svelte-1q04dzj");
-    			add_location(footer, file$1, 10, 4, 272);
+    			add_location(footer, file$1, 10, 4, 271);
     			attr_dev(div, "class", "skill-card svelte-1q04dzj");
     			add_location(div, file$1, 5, 0, 119);
     		},
@@ -8230,7 +8230,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (!current || dirty & /*vectorImg*/ 1 && img.src !== (img_src_value = "/img/" + /*vectorImg*/ ctx[0])) {
+    			if (!current || dirty & /*vectorImg*/ 1 && img.src !== (img_src_value = "img/" + /*vectorImg*/ ctx[0])) {
     				attr_dev(img, "src", img_src_value);
     			}
 
