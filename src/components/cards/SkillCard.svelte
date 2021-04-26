@@ -4,7 +4,7 @@
 </script>
 
 <div class="skill-card">
-    <img src="img/{vectorImg}" alt={vectorImg}>
+    <img src="./img/{vectorImg}" alt={vectorImg}>
     <main class="body">
         <slot name="body"></slot>
     </main>
