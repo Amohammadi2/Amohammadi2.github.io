@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg8" width="210mm" height="180mm" version="1.1" viewBox="0 0 210 180" xmlns="http://www.w3.org/2000/svg">
+ <title id="title899">backend illustration vector art</title>
+ <g id="g841" transform="translate(-.75595 -129.27)" fill="none" stroke="#20cc93">
+  <rect id="rect835" x="11.339" y="143.63" width="189.74" height="130.02" ry=".12179" stroke-width="4.5"/>
+  <rect id="rect837" x="13.828" y="165.87" width="184.85" height=".15579" ry=".040158" stroke-width="4.8167"/>
+ </g>
+ <g id="g840" fill="none" stroke-width="4.5">
+  <circle id="path851" cx="185.53" cy="25.481" r="5.8799" stroke="#f8003b"/>
+  <circle id="circle853" cx="164.93" cy="25.481" r="5.8799" stroke="#f8b500"/>
+  <circle id="circle855" cx="144.68" cy="25.481" r="5.8799" stroke="#00f814"/>
+ </g>
+ <g fill="#20cc93" stroke="#20cc93">
+  <rect id="rect900" x="24.22" y="49.429" width="116.16" height="61.292" ry=".4603" stroke-width="4.5"/>
+  <rect id="rect906" x="149.39" y="50.16" width="16.895" height="1.0093" ry=".50465" stroke-width="3.985"/>
+  <rect id="rect908" x="164.87" y="60.204" width="28.943" height=".49429" ry=".24714" stroke-width="3.65"/>
+  <rect id="rect922" x="149.41" y="70.1" width="32.85" height=".62426" ry=".31213" stroke-width="4.37"/>
+  <rect id="rect924" x="149.65" y="79.951" width="43.992" height=".49429" ry=".24714" stroke-width="4.5"/>
+  <rect id="rect926" x="148.99" y="60.139" width="11.073" height=".97441" ry=".48721" stroke-width="3.1699"/>
+  <rect id="rect928" x="187.62" y="69.583" width="6.6014" height="1.3083" ry=".65415" stroke-width="2.836"/>
+  <rect id="rect930" x="171.92" y="50.235" width="21.376" height=".85903" ry=".42952" stroke-width="4.1353"/>
+  <rect id="rect949" x="149.04" y="88.257" width="16.895" height="1.0093" ry=".50465" stroke-width="3.985"/>
+  <rect id="rect951" x="164.52" y="98.301" width="28.943" height=".49429" ry=".24714" stroke-width="3.65"/>
+  <rect id="rect953" x="149.06" y="108.2" width="32.85" height=".62426" ry=".31213" stroke-width="4.37"/>
+  <rect id="rect955" x="149.3" y="118.05" width="43.992" height=".49429" ry=".24714" stroke-width="4.5"/>
+  <rect id="rect957" x="148.64" y="98.236" width="11.073" height=".97441" ry=".48721" stroke-width="3.1699"/>
+  <rect id="rect959" x="187.27" y="107.68" width="6.6014" height="1.3083" ry=".65415" stroke-width="2.836"/>
+  <rect id="rect961" x="171.57" y="88.332" width="21.376" height=".85903" ry=".42952" stroke-width="4.1353"/>
+  <rect id="rect963" x="149.21" y="126.88" width="16.895" height="1.0093" ry=".50465" stroke-width="3.985"/>
+  <rect id="rect965" x="164.69" y="136.92" width="28.943" height=".49429" ry=".24714" stroke-width="3.65"/>
+  <rect id="rect967" x="148.81" y="136.86" width="11.073" height=".97441" ry=".48721" stroke-width="3.1699"/>
+  <rect id="rect969" x="171.74" y="126.95" width="21.376" height=".85903" ry=".42952" stroke-width="4.1353"/>
+  <rect id="rect971" x="24.869" y="121.54" width="43.992" height=".49429" ry=".24714" stroke-width="4.5"/>
+ </g>
+ <path id="path979" d="m79.148 125.67s-5.8079-3.8925-4.3868-6.2404c1.4211-2.3479 4.1397-0.24715 4.1397-0.24715s3.7072-2.595 4.325-0.18536c0.61786 2.4097-4.0779 6.6729-4.0779 6.6729z" fill="#e73c3c"/>
+ <rect id="rect981" x="94.599" y="124.34" width="39.453" height="4.5052" rx="0" ry=".88823" fill="#20cc93" stroke="#20cc93" stroke-width="12.866"/>
+ <rect id="rect983" x="24.869" y="132.79" width="43.992" height=".49429" ry=".24714" fill="#20cc93" stroke="#20cc93" stroke-width="4.5"/>
+ <text id="text987" transform="scale(.90333 1.107)" x="83.019699" y="122.15276" fill="#000000" font-family="sans-serif" font-size="5.4187px" stroke-width=".13547" style="line-height:1.25" xml:space="preserve"><tspan id="tspan985" x="83.019699" y="122.15276" stroke-width=".13547">45k</tspan></text>
+ <g id="g1008" transform="matrix(1.0722 0 0 1.1154 -7.3524 -9.5851)" fill="#73ecbd">
+  <rect id="rect993" x="29.359" y="70.113" width="57.884" height="37.682" ry=".26938"/>
+  <rect id="rect995" x="29.447" y="52.908" width="58.075" height="15.654" ry=".11191"/>
+  <rect id="rect997" x="89.175" y="52.864" width="48.657" height="33.883" ry=".24222"/>
+  <rect id="rect999" x="89.124" y="88.626" width="31.851" height="19.348" ry=".13832"/>
+  <rect id="rect1001" x="123.11" y="88.749" width="14.675" height="19.101" ry=".13655"/>
+ </g>
+</svg>

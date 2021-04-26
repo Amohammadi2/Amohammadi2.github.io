@@ -94,23 +94,6 @@
 			<Biography />
 		</div>
 	</section>
-	<!-- <section class="skill-card-container container grid row-3">
-		<SkillCard vectorImg="Backend.svg">
-			<section slot="body">
-				<h3 align="center" class="card-header">توسعه Back-end</h3>
-			</section>
-		</SkillCard>
-		<SkillCard vectorImg="Backend.svg">
-			<section slot="body">
-				<h3 align="center" class="card-header">توسعه Front-end</h3>
-			</section>
-		</SkillCard>
-		<SkillCard vectorImg="Backend.svg">
-			<section slot="body">
-				<h3 align="center" class="card-header">ML & AI</h3>
-			</section>
-		</SkillCard>
-	</section> -->
 </div>
 
 <section>
@@ -121,9 +104,9 @@
 	<div class="splide__track">
 		<ul class="splide__list">
 			<li class="splide__slide">
-				<SkillCard vectorImg="Backend.svg">
+				<SkillCard vectorImg="Frontend.svg">
 					<section slot="body">
-						<h3 align="center" class="card-header">توسعه Back-end</h3>
+						<h3 align="center" class="card-header">توسعه Front-end</h3>
 					</section>
 				</SkillCard>
 			</li>
