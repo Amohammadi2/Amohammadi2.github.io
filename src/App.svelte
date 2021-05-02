@@ -8,6 +8,7 @@
 	import VirgoolIcon from "./components/icons/VirgoolIcon.svelte";
 	import Biography from "./components/static/Biography.svelte";
 	import SkillCard from "./components/cards/SkillCard.svelte";
+	import Link from "./components/utils/Link.svelte";
 
 	function playStartAnimation() {
 		anime({
@@ -27,15 +28,12 @@
 	function InitSliders() {
 		new Splide(".splide", {
 			type: "slide",
-			perPage: 5,
+			perPage: 3,
 			focus: "center",
 			gap: "2rem",
 			pagination: false,
 			breakpoints: {
-				'1100': {
-					perPage: 3,
-				},
-				'850': {
+				'700': {
 					perPage: 1,
 				},
 			}
@@ -66,15 +64,21 @@
 			<img src="./img/profile.jpg" alt="prof"/>
 		</div>
 		<div class="link-list">
-			<span id="s-icon" style="transform: translateX(50px);">
-				<SoroushIcon />
-			</span>
-			<span id="v-icon">
-				<VirgoolIcon />
-			</span>
-			<span id="r-icon" style="transform: translateX(-50px);">
-				<RubikaIcon />
-			</span>
+			<Link addr="@ashkan_mohammadi" action="copy">
+				<span id="s-icon" style="transform: translateX(50px);">
+					<SoroushIcon />
+				</span>
+			</Link>
+			<Link addr="https://virgool.io/@mohammadiashkan1384">
+				<span id="v-icon">
+					<VirgoolIcon />
+				</span>
+			</Link>
+			<Link addr="@m_AshkanProgrammer" action="copy">
+				<span id="r-icon" style="transform: translateX(-50px);">
+					<RubikaIcon />
+				</span>
+			</Link>
 		</div>
 		<h1 class="title">
 			اشکان محمدی
@@ -104,18 +108,10 @@
 	<div class="splide__track">
 		<ul class="splide__list">
 			<li class="splide__slide">
-				<SkillCard vectorImg="Frontend.svg">
-					<section slot="body">
-						<h3 align="center" class="card-header">توسعه Front-end</h3>
-					</section>
-				</SkillCard>
+				<SkillCard vectorImg="Frontend.svg" text="توسعه Front-end" />
 			</li>
 			<li class="splide__slide">
-				<SkillCard vectorImg="Backend.svg">
-					<section slot="body">
-						<h3 align="center" class="card-header">توسعه Back-end</h3>
-					</section>
-				</SkillCard>
+				<SkillCard vectorImg="Backend.svg" text="توسعه Back-end" />
 			</li>
 		</ul>
 	</div>

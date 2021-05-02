@@ -1,6 +1,7 @@
 <script>
     import IconicButton from "../buttons/IconicButton.svelte";
     export let vectorImg = "";
+    export let text= "";
 </script>
 
 <div class="skill-card">
@@ -9,7 +10,7 @@
         <slot name="body"></slot>
     </main>
     <footer>
-        <IconicButton text="جزئیات" icon_class="tasks" style="width: 200px; margin: auto;"/>
+        <IconicButton text={text} icon_class="angle-left" style="width: 250px; margin: auto; text-align: center"/>
     </footer>
 </div>
 
@@ -23,7 +24,7 @@
         opacity: 0;
     }
     img {
-        width: 200px;
+        width: 250px;
         margin-left: auto;
         margin-right: auto; 
     }
