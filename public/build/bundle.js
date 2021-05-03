@@ -8543,7 +8543,7 @@ var app = (function () {
     			create_component(soroushicon.$$.fragment);
     			attr_dev(span, "id", "s-icon");
     			set_style(span, "transform", "translateX(50px)");
-    			attr_dev(span, "class", "svelte-vm8z03");
+    			attr_dev(span, "class", "svelte-1oz65pl");
     			add_location(span, file, 67, 4, 1585);
     		},
     		m: function mount(target, anchor) {
@@ -8589,7 +8589,7 @@ var app = (function () {
     			span = element("span");
     			create_component(virgoolicon.$$.fragment);
     			attr_dev(span, "id", "v-icon");
-    			attr_dev(span, "class", "svelte-vm8z03");
+    			attr_dev(span, "class", "svelte-1oz65pl");
     			add_location(span, file, 72, 4, 1751);
     		},
     		m: function mount(target, anchor) {
@@ -8636,7 +8636,7 @@ var app = (function () {
     			create_component(rubikaicon.$$.fragment);
     			attr_dev(span, "id", "r-icon");
     			set_style(span, "transform", "translateX(-50px)");
-    			attr_dev(span, "class", "svelte-vm8z03");
+    			attr_dev(span, "class", "svelte-1oz65pl");
     			add_location(span, file, 77, 4, 1874);
     		},
     		m: function mount(target, anchor) {
@@ -8710,6 +8710,18 @@ var app = (function () {
     	let t14;
     	let li1;
     	let skillcard1;
+    	let t15;
+    	let li2;
+    	let skillcard2;
+    	let t16;
+    	let section2;
+    	let h12;
+    	let t18;
+    	let textarea;
+    	let t19;
+    	let iconicbutton3;
+    	let t20;
+    	let footer;
     	let current;
 
     	link0 = new Link({
@@ -8781,6 +8793,19 @@ var app = (function () {
     			$$inline: true
     		});
 
+    	skillcard2 = new SkillCard({
+    			props: {
+    				vectorImg: "SoroushBot.svg",
+    				text: "ساخت بات سوروش"
+    			},
+    			$$inline: true
+    		});
+
+    	iconicbutton3 = new IconicButton({
+    			props: { text: "ارسال", icon_class: "send" },
+    			$$inline: true
+    		});
+
     	const block = {
     		c: function create() {
     			div4 = element("div");
@@ -8824,42 +8849,70 @@ var app = (function () {
     			t14 = space();
     			li1 = element("li");
     			create_component(skillcard1.$$.fragment);
+    			t15 = space();
+    			li2 = element("li");
+    			create_component(skillcard2.$$.fragment);
+    			t16 = space();
+    			section2 = element("section");
+    			h12 = element("h1");
+    			h12.textContent = "پیشنهاد، انتقاد یا درخواست همکاری داری؟";
+    			t18 = space();
+    			textarea = element("textarea");
+    			t19 = space();
+    			create_component(iconicbutton3.$$.fragment);
+    			t20 = space();
+    			footer = element("footer");
+    			footer.textContent = "footer part";
     			if (img.src !== (img_src_value = "./img/profile.jpg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "prof");
-    			attr_dev(img, "class", "svelte-vm8z03");
+    			attr_dev(img, "class", "svelte-1oz65pl");
     			add_location(img, file, 63, 3, 1451);
-    			attr_dev(div0, "class", "user-profile svelte-vm8z03");
+    			attr_dev(div0, "class", "user-profile svelte-1oz65pl");
     			add_location(div0, file, 62, 2, 1420);
-    			attr_dev(div1, "class", "link-list svelte-vm8z03");
+    			attr_dev(div1, "class", "link-list svelte-1oz65pl");
     			add_location(div1, file, 65, 2, 1506);
-    			attr_dev(h10, "class", "title svelte-vm8z03");
+    			attr_dev(h10, "class", "title svelte-1oz65pl");
     			add_location(h10, file, 82, 2, 1990);
-    			attr_dev(p, "class", "description svelte-vm8z03");
+    			attr_dev(p, "class", "description svelte-1oz65pl");
     			add_location(p, file, 85, 2, 2037);
-    			attr_dev(div2, "class", "btn-group svelte-vm8z03");
+    			attr_dev(div2, "class", "btn-group svelte-1oz65pl");
     			add_location(div2, file, 88, 2, 2127);
-    			attr_dev(header, "class", "header svelte-vm8z03");
+    			attr_dev(header, "class", "header svelte-1oz65pl");
     			add_location(header, file, 61, 1, 1393);
-    			attr_dev(div3, "class", "container rtl svelte-vm8z03");
+    			attr_dev(div3, "class", "container rtl svelte-1oz65pl");
     			add_location(div3, file, 96, 2, 2504);
-    			attr_dev(section0, "class", "green-box svelte-vm8z03");
+    			attr_dev(section0, "class", "green-box svelte-1oz65pl");
     			add_location(section0, file, 95, 1, 2473);
-    			attr_dev(div4, "class", "main-grid svelte-vm8z03");
+    			attr_dev(div4, "class", "main-grid svelte-1oz65pl");
     			add_location(div4, file, 60, 0, 1367);
     			attr_dev(h11, "align", "center");
-    			attr_dev(h11, "class", "svelte-vm8z03");
+    			attr_dev(h11, "class", "svelte-1oz65pl");
     			add_location(h11, file, 103, 1, 2596);
     			add_location(section1, file, 102, 0, 2584);
     			attr_dev(li0, "class", "splide__slide");
     			add_location(li0, file, 109, 3, 2740);
     			attr_dev(li1, "class", "splide__slide");
     			add_location(li1, file, 112, 3, 2848);
+    			attr_dev(li2, "class", "splide__slide");
+    			add_location(li2, file, 115, 3, 2954);
     			attr_dev(ul, "class", "splide__list");
     			add_location(ul, file, 108, 2, 2710);
     			attr_dev(div5, "class", "splide__track");
     			add_location(div5, file, 107, 1, 2679);
     			attr_dev(div6, "class", "splide");
     			add_location(div6, file, 106, 0, 2656);
+    			attr_dev(h12, "align", "center");
+    			attr_dev(h12, "class", "svelte-1oz65pl");
+    			add_location(h12, file, 123, 1, 3118);
+    			attr_dev(textarea, "placeholder", "همین جا مطرحش کن...");
+    			attr_dev(textarea, "class", "svelte-1oz65pl");
+    			add_location(textarea, file, 124, 1, 3184);
+    			attr_dev(section2, "id", "contact-form");
+    			attr_dev(section2, "class", "svelte-1oz65pl");
+    			add_location(section2, file, 122, 0, 3088);
+    			set_style(footer, "margin-top", "100px");
+    			set_style(footer, "color", "transparent");
+    			add_location(footer, file, 128, 0, 3305);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8903,6 +8956,18 @@ var app = (function () {
     			append_dev(ul, t14);
     			append_dev(ul, li1);
     			mount_component(skillcard1, li1, null);
+    			append_dev(ul, t15);
+    			append_dev(ul, li2);
+    			mount_component(skillcard2, li2, null);
+    			insert_dev(target, t16, anchor);
+    			insert_dev(target, section2, anchor);
+    			append_dev(section2, h12);
+    			append_dev(section2, t18);
+    			append_dev(section2, textarea);
+    			append_dev(section2, t19);
+    			mount_component(iconicbutton3, section2, null);
+    			insert_dev(target, t20, anchor);
+    			insert_dev(target, footer, anchor);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -8939,6 +9004,8 @@ var app = (function () {
     			transition_in(biography.$$.fragment, local);
     			transition_in(skillcard0.$$.fragment, local);
     			transition_in(skillcard1.$$.fragment, local);
+    			transition_in(skillcard2.$$.fragment, local);
+    			transition_in(iconicbutton3.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -8951,6 +9018,8 @@ var app = (function () {
     			transition_out(biography.$$.fragment, local);
     			transition_out(skillcard0.$$.fragment, local);
     			transition_out(skillcard1.$$.fragment, local);
+    			transition_out(skillcard2.$$.fragment, local);
+    			transition_out(iconicbutton3.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -8968,6 +9037,12 @@ var app = (function () {
     			if (detaching) detach_dev(div6);
     			destroy_component(skillcard0);
     			destroy_component(skillcard1);
+    			destroy_component(skillcard2);
+    			if (detaching) detach_dev(t16);
+    			if (detaching) detach_dev(section2);
+    			destroy_component(iconicbutton3);
+    			if (detaching) detach_dev(t20);
+    			if (detaching) detach_dev(footer);
     		}
     	};
 
