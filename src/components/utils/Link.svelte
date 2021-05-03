@@ -8,10 +8,11 @@
         // Todo: implement a notification system
         alert ("ID copied");
         cpy_field.value = addr;
-        cpy_field.focus();
         cpy_field.select();
         console.log(cpy_field);
         document.execCommand("copy");
+        cpy_field.style.display = "none";
+        cpy_field.style.display = "block";
     }
 </script>
 
