@@ -1,4 +1,9 @@
 <script>
+// @bug(1) @critical focus on transparent fields 
+// @bug(2) @critical compress the profile image
+// @bug(3) @low-priority background image is not shown on production page
+
+
 	import { onMount } from "svelte";
 	import anime from "animejs/lib/anime.es";
 	import Splide from "@splidejs/splide";
@@ -121,7 +126,7 @@
 	:global(body) {
 		padding: 0;
 		margin: 0;
-		background: url(/img/background.png);
+		background: url(../img/background.png);
 		background-size: cover;
 		background-attachment: fixed;
 	}
