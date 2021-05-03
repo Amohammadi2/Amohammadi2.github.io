@@ -113,9 +113,22 @@
 			<li class="splide__slide">
 				<SkillCard vectorImg="Backend.svg" text="توسعه Back-end" />
 			</li>
+			<li class="splide__slide">
+				<SkillCard vectorImg="SoroushBot.svg" text="ساخت بات سوروش" />
+			</li>
 		</ul>
 	</div>
 </div>
+
+<section id="contact-form">
+	<h1 align="center">پیشنهاد، انتقاد یا درخواست همکاری داری؟</h1>
+	<textarea placeholder="همین جا مطرحش کن..."></textarea>
+	<IconicButton text="ارسال" icon_class="send" />
+</section>
+
+<footer style="margin-top: 100px; color: transparent">
+	footer part
+</footer>
 
 <style>
 	:global(body) {
@@ -129,6 +142,7 @@
 	:global(.p-icon) {
 		cursor: pointer;
 	}
+
 
 	h1 { 
 		position: relative;
@@ -230,28 +244,45 @@
 		margin: 0 !important;
 	}
 
-	@media only screen and (max-width: 825px) {
-		.skill-card-container {
-			grid-template-columns: 1fr 1fr;
-		}
+	section textarea {
+		width: 100%;
+		min-height: 200px;
+		max-height: 500px;
+		direction:rtl;
+		border: none;
+		outline: none;
+		border-right: 2px solid rgb(32, 204, 147);
+		border-left: 2px solid rgb(32, 204, 147);
+		margin-top: 40px;
+		margin-bottom: 10px;
+		resize: vertical;
+	}
+
+	#contact-form {
+		margin-top: 60px;
+		width: 60%;
+		margin-left: 20%;
+		margin-right: 20%;
 	}
 
 	@media only screen and (max-width: 750px) {
 		.main-grid {
 			grid-template-columns: 1fr;
 		}
+		
 		.btn-group {
 			flex-direction: column-reverse;
 		}
-			.container {
+
+		.container {
 			width: 90%;
 			margin-left: 5%;
 		}
-	}
 
-	@media only screen and (max-width: 600px) {
-		.skill-card-container {
-			grid-template-columns: 1fr;
+		#contact-form { 
+			width: 90%;
+			margin-left: 5%;
+			margin-right: 5%;
 		}
 	}
 </style>
