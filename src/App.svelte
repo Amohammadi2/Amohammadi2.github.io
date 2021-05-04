@@ -1,7 +1,12 @@
 <script>
 	import { onMount } from "svelte";
+	import { flip } from "svelte/animate";
+	import { fly } from "svelte/transition";
 	import anime from "animejs/lib/anime.es";
 	import Splide from "@splidejs/splide";
+	import NotificationAPI from "./modules/notificationAPI";
+	import { notifications } from "./stores/store";
+	import Notification from "./components/notifications/Notification.svelte"
 	import IconicButton from "./components/buttons/IconicButton.svelte";
 	import SoroushIcon from "./components/icons/SoroushIcon.svelte";
 	import RubikaIcon from "./components/icons/RubikaIcon.svelte";
@@ -9,6 +14,8 @@
 	import Biography from "./components/static/Biography.svelte";
 	import SkillCard from "./components/cards/SkillCard.svelte";
 	import Link from "./components/utils/Link.svelte";
+
+	let feedback_txt;
 
 	function playStartAnimation() {
 		anime({
@@ -48,6 +55,19 @@
 		})
 	}
 
+	function stage(interval, fnAction, step) {
+		console.log(step);
+		step = (step == 0) ? interval : step;
+		setTimeout(() => {
+			fnAction();
+		}, interval);
+		return {
+			chain: (next_action) => {
+				return stage(interval+step, next_action, step);
+			}
+		};
+	}
+
 	window.onscroll = event => {
 		if (window.scrollY > 380) displayCards();
 	}
@@ -55,8 +75,31 @@
 	onMount(() => {
 		playStartAnimation();
 		InitSliders();
+		stage(1000, () => {
+			NotificationAPI.success("سلام؛ خوش آمدید!");
+		}, 0)
+		.chain(() => {
+			NotificationAPI.success("اشکان هستم؛ توسعه دهنده وب")
+		})
+		.chain(() => {
+			NotificationAPI.success("خوش حالم که سری به من زدید")
+		})
+		
 	});
 </script>
+
+<!-- 
+	@bug (1): notifications are not deleted smoothely
+	@bug (2): move notifications to right bottom corner with fixed position
+	@bug (3): style the dismiss button on notifications
+ -->
+<div class="notification-box">
+	{#each $notifications as n (n.pk)}
+		<div animate:flip="{{duration: 500}}" transition:fly={{duration: 500, x: 200}}>
+			<Notification type={n.type} msg={n.msg} pk={n.pk}/>
+		</div>
+	{/each}
+</div>
 
 <div class="main-grid">
 	<header class="header">
@@ -122,8 +165,14 @@
 
 <section id="contact-form">
 	<h1 align="center">پیشنهاد، انتقاد یا درخواست همکاری داری؟</h1>
-	<textarea placeholder="همین جا مطرحش کن..."></textarea>
-	<IconicButton text="ارسال" icon_class="send" />
+	<textarea placeholder="همین جا مطرحش کن..." bind:value={feedback_txt}></textarea>
+	<input type="email" placeholder="آدرس ایمیل" title="جوابت رو از این طریق دریافت می کنی"
+		style="width: 100%;"
+	/>
+	<IconicButton text="ارسال" icon_class="send" style="
+		opacity: {feedback_txt? '1' : '0.30'};
+		pointer-events: {feedback_txt? 'all' : 'none'};
+	"/>
 </section>
 
 <footer style="margin-top: 100px; color: transparent">
@@ -263,6 +312,15 @@
 		width: 60%;
 		margin-left: 20%;
 		margin-right: 20%;
+	}
+
+	.notification-box {
+		position: fixed;
+		top: 10px;
+		left: 20px;
+		direction: rtl;
+		width: 300px;
+		z-index: 9999;
 	}
 
 	@media only screen and (max-width: 750px) {

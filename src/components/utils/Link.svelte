@@ -1,4 +1,5 @@
 <script>
+    import NotificationAPI from "../../modules/notificationAPI";
     export let addr = "";
     export let action = "open";
 
@@ -6,13 +7,15 @@
 
     function copy() {
         // Todo: implement a notification system
-        alert ("ID copied");
+        NotificationAPI.success("ID کپی شد");
         cpy_field.value = addr;
         cpy_field.select();
         console.log(cpy_field);
         document.execCommand("copy");
         cpy_field.style.display = "none";
-        cpy_field.style.display = "block";
+        setTimeout(() => {
+            cpy_field.style.display = "block";
+        }, 200);
     }
 </script>
 
