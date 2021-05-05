@@ -31,7 +31,7 @@
     });
 </script>
 
-<button class="iconic-btn" style={style} bind:this={button}>
+<button class="iconic-btn" style={style} bind:this={button} on:click>
     <span class="fa fa-{icon_class} btn-icon"></span>
     <span class="btn-text">{text}</span>
 </button>
