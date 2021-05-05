@@ -309,6 +309,15 @@ var app = (function () {
     function onMount(fn) {
         get_current_component().$$.on_mount.push(fn);
     }
+    // TODO figure out if we still want to support
+    // shorthand events, or if we want to implement
+    // a real bubbling mechanism
+    function bubble(component, event) {
+        const callbacks = component.$$.callbacks[event.type];
+        if (callbacks) {
+            callbacks.slice().forEach(fn => fn(event));
+        }
+    }
 
     const dirty_components = [];
     const binding_callbacks = [];
@@ -8271,6 +8280,8 @@ var app = (function () {
     	let t0;
     	let span1;
     	let t1;
+    	let mounted;
+    	let dispose;
 
     	const block = {
     		c: function create() {
@@ -8280,9 +8291,9 @@ var app = (function () {
     			span1 = element("span");
     			t1 = text(/*text*/ ctx[1]);
     			attr_dev(span0, "class", span0_class_value = "fa fa-" + /*icon_class*/ ctx[0] + " btn-icon" + " svelte-1ah2ccf");
-    			add_location(span0, file$7, 34, 4, 1028);
+    			add_location(span0, file$7, 34, 4, 1037);
     			attr_dev(span1, "class", "btn-text svelte-1ah2ccf");
-    			add_location(span1, file$7, 35, 4, 1083);
+    			add_location(span1, file$7, 35, 4, 1092);
     			attr_dev(button_1, "class", "iconic-btn svelte-1ah2ccf");
     			attr_dev(button_1, "style", /*style*/ ctx[2]);
     			add_location(button_1, file$7, 33, 0, 962);
@@ -8296,7 +8307,12 @@ var app = (function () {
     			append_dev(button_1, t0);
     			append_dev(button_1, span1);
     			append_dev(span1, t1);
-    			/*button_1_binding*/ ctx[4](button_1);
+    			/*button_1_binding*/ ctx[5](button_1);
+
+    			if (!mounted) {
+    				dispose = listen_dev(button_1, "click", /*click_handler*/ ctx[4], false, false, false);
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*icon_class*/ 1 && span0_class_value !== (span0_class_value = "fa fa-" + /*icon_class*/ ctx[0] + " btn-icon" + " svelte-1ah2ccf")) {
@@ -8313,7 +8329,9 @@ var app = (function () {
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(button_1);
-    			/*button_1_binding*/ ctx[4](null);
+    			/*button_1_binding*/ ctx[5](null);
+    			mounted = false;
+    			dispose();
     		}
     	};
 
@@ -8369,6 +8387,10 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$2.warn(`<IconicButton> was created with unknown prop '${key}'`);
     	});
 
+    	function click_handler(event) {
+    		bubble($$self, event);
+    	}
+
     	function button_1_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			button = $$value;
@@ -8402,7 +8424,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [icon_class, text, style, button, button_1_binding];
+    	return [icon_class, text, style, button, click_handler, button_1_binding];
     }
 
     class IconicButton extends SvelteComponentDev {
@@ -9251,11 +9273,11 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[6] = list[i];
+    	child_ctx[12] = list[i];
     	return child_ctx;
     }
 
-    // (97:1) {#each $notifications as n (n.pk)}
+    // (99:1) {#each $notifications as n (n.pk)}
     function create_each_block(key_1, ctx) {
     	let div;
     	let notification;
@@ -9267,9 +9289,9 @@ var app = (function () {
 
     	notification = new Notification({
     			props: {
-    				type: /*n*/ ctx[6].type,
-    				msg: /*n*/ ctx[6].msg,
-    				pk: /*n*/ ctx[6].pk
+    				type: /*n*/ ctx[12].type,
+    				msg: /*n*/ ctx[12].msg,
+    				pk: /*n*/ ctx[12].pk
     			},
     			$$inline: true
     		});
@@ -9281,7 +9303,7 @@ var app = (function () {
     			div = element("div");
     			create_component(notification.$$.fragment);
     			t = space();
-    			add_location(div, file, 97, 2, 2447);
+    			add_location(div, file, 99, 2, 2420);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -9293,9 +9315,9 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
     			const notification_changes = {};
-    			if (dirty & /*$notifications*/ 2) notification_changes.type = /*n*/ ctx[6].type;
-    			if (dirty & /*$notifications*/ 2) notification_changes.msg = /*n*/ ctx[6].msg;
-    			if (dirty & /*$notifications*/ 2) notification_changes.pk = /*n*/ ctx[6].pk;
+    			if (dirty & /*$notifications*/ 2) notification_changes.type = /*n*/ ctx[12].type;
+    			if (dirty & /*$notifications*/ 2) notification_changes.msg = /*n*/ ctx[12].msg;
+    			if (dirty & /*$notifications*/ 2) notification_changes.pk = /*n*/ ctx[12].pk;
     			notification.$set(notification_changes);
     		},
     		r: function measure() {
@@ -9338,14 +9360,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(97:1) {#each $notifications as n (n.pk)}",
+    		source: "(99:1) {#each $notifications as n (n.pk)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (110:3) <Link addr="@ashkan_mohammadi" action="copy">
+    // (112:3) <Link addr="@ashkan_mohammadi" action="copy">
     function create_default_slot_2(ctx) {
     	let span;
     	let soroushicon;
@@ -9359,7 +9381,7 @@ var app = (function () {
     			attr_dev(span, "id", "s-icon");
     			set_style(span, "transform", "translateX(50px)");
     			attr_dev(span, "class", "svelte-1kagqgn");
-    			add_location(span, file, 110, 4, 2832);
+    			add_location(span, file, 112, 4, 2805);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -9385,14 +9407,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(110:3) <Link addr=\\\"@ashkan_mohammadi\\\" action=\\\"copy\\\">",
+    		source: "(112:3) <Link addr=\\\"@ashkan_mohammadi\\\" action=\\\"copy\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (115:3) <Link addr="https://virgool.io/@mohammadiashkan1384">
+    // (117:3) <Link addr="https://virgool.io/@mohammadiashkan1384">
     function create_default_slot_1(ctx) {
     	let span;
     	let virgoolicon;
@@ -9405,7 +9427,7 @@ var app = (function () {
     			create_component(virgoolicon.$$.fragment);
     			attr_dev(span, "id", "v-icon");
     			attr_dev(span, "class", "svelte-1kagqgn");
-    			add_location(span, file, 115, 4, 2998);
+    			add_location(span, file, 117, 4, 2971);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -9431,14 +9453,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(115:3) <Link addr=\\\"https://virgool.io/@mohammadiashkan1384\\\">",
+    		source: "(117:3) <Link addr=\\\"https://virgool.io/@mohammadiashkan1384\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (120:3) <Link addr="@m_AshkanProgrammer" action="copy">
+    // (122:3) <Link addr="@m_AshkanProgrammer" action="copy">
     function create_default_slot(ctx) {
     	let span;
     	let rubikaicon;
@@ -9452,7 +9474,7 @@ var app = (function () {
     			attr_dev(span, "id", "r-icon");
     			set_style(span, "transform", "translateX(-50px)");
     			attr_dev(span, "class", "svelte-1kagqgn");
-    			add_location(span, file, 120, 4, 3121);
+    			add_location(span, file, 122, 4, 3094);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -9478,7 +9500,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(120:3) <Link addr=\\\"@m_AshkanProgrammer\\\" action=\\\"copy\\\">",
+    		source: "(122:3) <Link addr=\\\"@m_AshkanProgrammer\\\" action=\\\"copy\\\">",
     		ctx
     	});
 
@@ -9548,7 +9570,7 @@ var app = (function () {
     	let dispose;
     	let each_value = /*$notifications*/ ctx[1];
     	validate_each_argument(each_value);
-    	const get_key = ctx => /*n*/ ctx[6].pk;
+    	const get_key = ctx => /*n*/ ctx[12].pk;
     	validate_each_keys(ctx, each_value, get_each_context, get_key);
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -9595,10 +9617,14 @@ var app = (function () {
     			$$inline: true
     		});
 
+    	iconicbutton0.$on("click", /*click_handler*/ ctx[3]);
+
     	iconicbutton1 = new IconicButton({
     			props: { text: "پروژه ها", icon_class: "tasks" },
     			$$inline: true
     		});
+
+    	iconicbutton1.$on("click", /*click_handler_1*/ ctx[4]);
 
     	iconicbutton2 = new IconicButton({
     			props: {
@@ -9608,6 +9634,7 @@ var app = (function () {
     			$$inline: true
     		});
 
+    	iconicbutton2.$on("click", /*click_handler_2*/ ctx[5]);
     	biography = new Biography({ $$inline: true });
 
     	skillcard0 = new SkillCard({
@@ -9642,6 +9669,8 @@ var app = (function () {
     			},
     			$$inline: true
     		});
+
+    	iconicbutton3.$on("click", /*click_handler_3*/ ctx[7]);
 
     	const block = {
     		c: function create() {
@@ -9710,62 +9739,62 @@ var app = (function () {
     			footer = element("footer");
     			footer.textContent = "footer part";
     			attr_dev(div0, "class", "notification-box svelte-1kagqgn");
-    			add_location(div0, file, 95, 0, 2376);
+    			add_location(div0, file, 97, 0, 2349);
     			if (img.src !== (img_src_value = "./img/profile.jpg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "prof");
     			attr_dev(img, "class", "svelte-1kagqgn");
-    			add_location(img, file, 106, 3, 2698);
+    			add_location(img, file, 108, 3, 2671);
     			attr_dev(div1, "class", "user-profile svelte-1kagqgn");
-    			add_location(div1, file, 105, 2, 2667);
+    			add_location(div1, file, 107, 2, 2640);
     			attr_dev(div2, "class", "link-list svelte-1kagqgn");
-    			add_location(div2, file, 108, 2, 2753);
+    			add_location(div2, file, 110, 2, 2726);
     			attr_dev(h10, "class", "title svelte-1kagqgn");
-    			add_location(h10, file, 125, 2, 3237);
+    			add_location(h10, file, 127, 2, 3210);
     			attr_dev(p, "class", "description svelte-1kagqgn");
-    			add_location(p, file, 128, 2, 3284);
+    			add_location(p, file, 130, 2, 3257);
     			attr_dev(div3, "class", "btn-group svelte-1kagqgn");
-    			add_location(div3, file, 131, 2, 3374);
+    			add_location(div3, file, 133, 2, 3347);
     			attr_dev(header, "class", "header svelte-1kagqgn");
-    			add_location(header, file, 104, 1, 2640);
+    			add_location(header, file, 106, 1, 2613);
     			attr_dev(div4, "class", "container rtl svelte-1kagqgn");
-    			add_location(div4, file, 139, 2, 3751);
+    			add_location(div4, file, 147, 2, 3845);
     			attr_dev(section0, "class", "green-box svelte-1kagqgn");
-    			add_location(section0, file, 138, 1, 3720);
+    			add_location(section0, file, 146, 1, 3814);
     			attr_dev(div5, "class", "main-grid svelte-1kagqgn");
-    			add_location(div5, file, 103, 0, 2614);
+    			add_location(div5, file, 105, 0, 2587);
     			attr_dev(h11, "align", "center");
     			attr_dev(h11, "class", "svelte-1kagqgn");
-    			add_location(h11, file, 146, 1, 3843);
-    			add_location(section1, file, 145, 0, 3831);
+    			add_location(h11, file, 154, 1, 3937);
+    			add_location(section1, file, 153, 0, 3925);
     			attr_dev(li0, "class", "splide__slide");
-    			add_location(li0, file, 152, 3, 3987);
+    			add_location(li0, file, 160, 3, 4081);
     			attr_dev(li1, "class", "splide__slide");
-    			add_location(li1, file, 155, 3, 4095);
+    			add_location(li1, file, 163, 3, 4189);
     			attr_dev(li2, "class", "splide__slide");
-    			add_location(li2, file, 158, 3, 4201);
+    			add_location(li2, file, 166, 3, 4295);
     			attr_dev(ul, "class", "splide__list");
-    			add_location(ul, file, 151, 2, 3957);
+    			add_location(ul, file, 159, 2, 4051);
     			attr_dev(div6, "class", "splide__track");
-    			add_location(div6, file, 150, 1, 3926);
+    			add_location(div6, file, 158, 1, 4020);
     			attr_dev(div7, "class", "splide");
-    			add_location(div7, file, 149, 0, 3903);
+    			add_location(div7, file, 157, 0, 3997);
     			attr_dev(h12, "align", "center");
     			attr_dev(h12, "class", "svelte-1kagqgn");
-    			add_location(h12, file, 166, 1, 4365);
+    			add_location(h12, file, 174, 1, 4459);
     			attr_dev(textarea, "placeholder", "همین جا مطرحش کن...");
     			attr_dev(textarea, "class", "svelte-1kagqgn");
-    			add_location(textarea, file, 167, 1, 4431);
+    			add_location(textarea, file, 175, 1, 4525);
     			attr_dev(input, "type", "email");
     			attr_dev(input, "placeholder", "آدرس ایمیل");
     			attr_dev(input, "title", "جوابت رو از این طریق دریافت می کنی");
     			set_style(input, "width", "100%");
-    			add_location(input, file, 168, 1, 4515);
+    			add_location(input, file, 176, 1, 4609);
     			attr_dev(section2, "id", "contact-form");
     			attr_dev(section2, "class", "svelte-1kagqgn");
-    			add_location(section2, file, 165, 0, 4335);
+    			add_location(section2, file, 173, 0, 4429);
     			set_style(footer, "margin-top", "100px");
     			set_style(footer, "color", "transparent");
-    			add_location(footer, file, 177, 0, 4801);
+    			add_location(footer, file, 187, 0, 4930);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9834,7 +9863,7 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(textarea, "input", /*textarea_input_handler*/ ctx[2]);
+    				dispose = listen_dev(textarea, "input", /*textarea_input_handler*/ ctx[6]);
     				mounted = true;
     			}
     		},
@@ -9852,21 +9881,21 @@ var app = (function () {
 
     			const link0_changes = {};
 
-    			if (dirty & /*$$scope*/ 512) {
+    			if (dirty & /*$$scope*/ 32768) {
     				link0_changes.$$scope = { dirty, ctx };
     			}
 
     			link0.$set(link0_changes);
     			const link1_changes = {};
 
-    			if (dirty & /*$$scope*/ 512) {
+    			if (dirty & /*$$scope*/ 32768) {
     				link1_changes.$$scope = { dirty, ctx };
     			}
 
     			link1.$set(link1_changes);
     			const link2_changes = {};
 
-    			if (dirty & /*$$scope*/ 512) {
+    			if (dirty & /*$$scope*/ 32768) {
     				link2_changes.$$scope = { dirty, ctx };
     			}
 
@@ -10024,14 +10053,7 @@ var app = (function () {
     		});
     	}
 
-    	window.onscroll = event => {
-    		if (window.scrollY > 380) displayCards();
-    	};
-
-    	onMount(() => {
-    		playStartAnimation();
-    		InitSliders();
-
+    	function displayWelcomeMessage() {
     		stage(
     			1000,
     			() => {
@@ -10041,8 +10063,22 @@ var app = (function () {
     		).chain(() => {
     			NotificationAPI.success("اشکان هستم؛ توسعه دهنده وب");
     		}).chain(() => {
-    			NotificationAPI.success("خوش حالم که سری به من زدید");
+    			NotificationAPI.success("خوشحالم که سری به وبسایت من زدید");
     		});
+    	}
+
+    	function renderPage() {
+    		NotificationAPI.warning("درحال انجام مراحل تست و توسعه");
+    	}
+
+    	window.onscroll = event => {
+    		if (window.scrollY > 380) displayCards();
+    	};
+
+    	onMount(() => {
+    		playStartAnimation();
+    		InitSliders();
+    		displayWelcomeMessage();
     	});
 
     	const writable_props = [];
@@ -10051,10 +10087,16 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1.warn(`<App> was created with unknown prop '${key}'`);
     	});
 
+    	const click_handler = () => renderPage();
+    	const click_handler_1 = () => renderPage();
+    	const click_handler_2 = () => renderPage();
+
     	function textarea_input_handler() {
     		feedback_txt = this.value;
     		$$invalidate(0, feedback_txt);
     	}
+
+    	const click_handler_3 = () => renderPage();
 
     	$$self.$capture_state = () => ({
     		onMount,
@@ -10077,6 +10119,8 @@ var app = (function () {
     		InitSliders,
     		displayCards,
     		stage,
+    		displayWelcomeMessage,
+    		renderPage,
     		$notifications
     	});
 
@@ -10088,7 +10132,16 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [feedback_txt, $notifications, textarea_input_handler];
+    	return [
+    		feedback_txt,
+    		$notifications,
+    		renderPage,
+    		click_handler,
+    		click_handler_1,
+    		click_handler_2,
+    		textarea_input_handler,
+    		click_handler_3
+    	];
     }
 
     class App extends SvelteComponentDev {
