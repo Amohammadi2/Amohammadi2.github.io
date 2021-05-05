@@ -8115,55 +8115,65 @@ var app = (function () {
     const file$8 = "src\\components\\notifications\\Notification.svelte";
 
     function create_fragment$8(ctx) {
-    	let div;
+    	let div1;
     	let span0;
     	let t1;
     	let span1;
     	let t2;
-    	let div_class_value;
+    	let t3;
+    	let div0;
+    	let div1_class_value;
     	let mounted;
     	let dispose;
 
     	const block = {
     		c: function create() {
-    			div = element("div");
+    			div1 = element("div");
     			span0 = element("span");
     			span0.textContent = "X";
     			t1 = space();
     			span1 = element("span");
     			t2 = text(/*msg*/ ctx[0]);
-    			attr_dev(span0, "class", "dismiss svelte-119iyip");
-    			add_location(span0, file$8, 9, 4, 193);
-    			add_location(span1, file$8, 10, 4, 273);
-    			attr_dev(div, "class", div_class_value = "notification " + /*type*/ ctx[1] + " svelte-119iyip");
-    			add_location(div, file$8, 8, 0, 154);
+    			t3 = space();
+    			div0 = element("div");
+    			attr_dev(span0, "class", "dismiss svelte-ouygj1");
+    			add_location(span0, file$8, 18, 4, 424);
+    			add_location(span1, file$8, 19, 4, 504);
+    			attr_dev(div0, "class", "not-progress svelte-ouygj1");
+    			add_location(div0, file$8, 21, 4, 532);
+    			attr_dev(div1, "class", div1_class_value = "notification " + /*type*/ ctx[1] + " svelte-ouygj1");
+    			add_location(div1, file$8, 17, 0, 385);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, span0);
-    			append_dev(div, t1);
-    			append_dev(div, span1);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, span0);
+    			append_dev(div1, t1);
+    			append_dev(div1, span1);
     			append_dev(span1, t2);
+    			append_dev(div1, t3);
+    			append_dev(div1, div0);
+    			/*div0_binding*/ ctx[5](div0);
 
     			if (!mounted) {
-    				dispose = listen_dev(span0, "click", /*click_handler*/ ctx[3], false, false, false);
+    				dispose = listen_dev(span0, "click", /*click_handler*/ ctx[4], false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*msg*/ 1) set_data_dev(t2, /*msg*/ ctx[0]);
 
-    			if (dirty & /*type*/ 2 && div_class_value !== (div_class_value = "notification " + /*type*/ ctx[1] + " svelte-119iyip")) {
-    				attr_dev(div, "class", div_class_value);
+    			if (dirty & /*type*/ 2 && div1_class_value !== (div1_class_value = "notification " + /*type*/ ctx[1] + " svelte-ouygj1")) {
+    				attr_dev(div1, "class", div1_class_value);
     			}
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(div1);
+    			/*div0_binding*/ ctx[5](null);
     			mounted = false;
     			dispose();
     		}
@@ -8186,6 +8196,18 @@ var app = (function () {
     	let { msg } = $$props;
     	let { type } = $$props;
     	let { pk } = $$props;
+    	let progress_bar_el;
+
+    	onMount(() => {
+    		//delete notification after 1 second
+    		setTimeout(
+    			() => {
+    				NotificationAPI.delete(pk);
+    			},
+    			3000
+    		);
+    	});
+
     	const writable_props = ["msg", "type", "pk"];
 
     	Object.keys($$props).forEach(key => {
@@ -8194,25 +8216,40 @@ var app = (function () {
 
     	const click_handler = () => NotificationAPI.delete(pk);
 
+    	function div0_binding($$value) {
+    		binding_callbacks[$$value ? "unshift" : "push"](() => {
+    			progress_bar_el = $$value;
+    			$$invalidate(3, progress_bar_el);
+    		});
+    	}
+
     	$$self.$$set = $$props => {
     		if ("msg" in $$props) $$invalidate(0, msg = $$props.msg);
     		if ("type" in $$props) $$invalidate(1, type = $$props.type);
     		if ("pk" in $$props) $$invalidate(2, pk = $$props.pk);
     	};
 
-    	$$self.$capture_state = () => ({ NotificationAPI, msg, type, pk });
+    	$$self.$capture_state = () => ({
+    		onMount,
+    		NotificationAPI,
+    		msg,
+    		type,
+    		pk,
+    		progress_bar_el
+    	});
 
     	$$self.$inject_state = $$props => {
     		if ("msg" in $$props) $$invalidate(0, msg = $$props.msg);
     		if ("type" in $$props) $$invalidate(1, type = $$props.type);
     		if ("pk" in $$props) $$invalidate(2, pk = $$props.pk);
+    		if ("progress_bar_el" in $$props) $$invalidate(3, progress_bar_el = $$props.progress_bar_el);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [msg, type, pk, click_handler];
+    	return [msg, type, pk, progress_bar_el, click_handler, div0_binding];
     }
 
     class Notification extends SvelteComponentDev {
