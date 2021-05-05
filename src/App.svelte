@@ -68,13 +68,7 @@
 		};
 	}
 
-	window.onscroll = event => {
-		if (window.scrollY > 380) displayCards();
-	}
-
-	onMount(() => {
-		playStartAnimation();
-		InitSliders();
+	function displayWelcomeMessage() {
 		stage(1000, () => {
 			NotificationAPI.success("سلام؛ خوش آمدید!");
 		}, 0)
@@ -82,17 +76,25 @@
 			NotificationAPI.success("اشکان هستم؛ توسعه دهنده وب")
 		})
 		.chain(() => {
-			NotificationAPI.success("خوش حالم که سری به من زدید")
+			NotificationAPI.success("خوشحالم که سری به وبسایت من زدید")
 		})
-		
+	}
+
+	function renderPage() {
+		NotificationAPI.warning("درحال انجام مراحل تست و توسعه");
+	}
+
+	window.onscroll = event => {
+		if (window.scrollY > 380) displayCards();
+	}
+
+	onMount(() => {
+		playStartAnimation();
+		InitSliders();
+		displayWelcomeMessage();
 	});
 </script>
 
-<!-- 
-	@bug (1): notifications are not deleted smoothely
-	@bug (2): move notifications to right bottom corner with fixed position
-	@bug (3): style the dismiss button on notifications
- -->
 <div class="notification-box">
 	{#each $notifications as n (n.pk)}
 		<div animate:flip="{{duration: 500}}" transition:fly={{duration: 500, x: 200}}>
@@ -131,9 +133,15 @@
 		</p>
 		<div class="btn-group">
 			<IconicButton text="مقالات" icon_class="file-text"
-				style="background-color: rgba(256, 256, 256, 0.3); color: rgb(32, 204, 147); border: 1px solid rgb(32, 204, 147);"/>
-			<IconicButton text="پروژه ها" icon_class="tasks"/>
-			<IconicButton text="ارتباط با من" icon_class="phone-square"/>
+				style="background-color: rgba(256, 256, 256, 0.3); color: rgb(32, 204, 147); border: 1px solid rgb(32, 204, 147);"
+				on:click={() => renderPage()}
+				/>
+			<IconicButton text="پروژه ها" icon_class="tasks"
+				on:click={() => renderPage()}
+			/>
+			<IconicButton text="ارتباط با من" icon_class="phone-square"
+				on:click={() => renderPage()}
+			/>
 		</div>
 	</header>
 	<section class="green-box">
@@ -172,7 +180,9 @@
 	<IconicButton text="ارسال" icon_class="send" style="
 		opacity: {feedback_txt? '1' : '0.30'};
 		pointer-events: {feedback_txt? 'all' : 'none'};
-	"/>
+	"
+	on:click={() => renderPage()}
+	/>
 </section>
 
 <footer style="margin-top: 100px; color: transparent">
