@@ -84,4 +84,10 @@
         direction: ltr;
         margin-top: 60px;
     }
+
+    @media only screen and (max-width: 650px) {
+        .icon-group {
+            flex-direction: column;
+        }
+    }
 </style>
