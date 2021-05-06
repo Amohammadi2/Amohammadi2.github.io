@@ -11670,7 +11670,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(loader.$$.fragment);
-    			attr_dev(div, "class", "svelte-1gceelj");
+    			attr_dev(div, "class", "svelte-1maig5");
     			add_location(div, file$1, 18, 4, 536);
     		},
     		m: function mount(target, anchor) {
@@ -11707,7 +11707,7 @@ var app = (function () {
     	return block;
     }
 
-    // (33:8) <Link action="copy" addr="0922721591">
+    // (34:12) <Link action="copy" addr="0922721591">
     function create_default_slot_1(ctx) {
     	let genericicon;
     	let current;
@@ -11744,14 +11744,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(33:8) <Link action=\\\"copy\\\" addr=\\\"0922721591\\\">",
+    		source: "(34:12) <Link action=\\\"copy\\\" addr=\\\"0922721591\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (36:8) <Link action="copy" addr="mohammadiashkan1384@gmail.com">
+    // (39:12) <Link action="copy" addr="mohammadiashkan1384@gmail.com">
     function create_default_slot(ctx) {
     	let genericicon;
     	let current;
@@ -11791,7 +11791,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(36:8) <Link action=\\\"copy\\\" addr=\\\"mohammadiashkan1384@gmail.com\\\">",
+    		source: "(39:12) <Link action=\\\"copy\\\" addr=\\\"mohammadiashkan1384@gmail.com\\\">",
     		ctx
     	});
 
@@ -11806,12 +11806,14 @@ var app = (function () {
     	let main;
     	let div0;
     	let t4;
+    	let div3;
     	let div1;
     	let link0;
     	let t5;
+    	let div2;
     	let link1;
     	let t6;
-    	let div2;
+    	let div4;
     	let iconicbutton;
     	let current;
     	let if_block = /*loading*/ ctx[0] && create_if_block(ctx);
@@ -11858,24 +11860,30 @@ var app = (function () {
     			div0 = element("div");
     			div0.textContent = "شما می توانید از طریق راه های ارتباطی زیر با من در ارتباط باشید";
     			t4 = space();
+    			div3 = element("div");
     			div1 = element("div");
     			create_component(link0.$$.fragment);
     			t5 = space();
+    			div2 = element("div");
     			create_component(link1.$$.fragment);
     			t6 = space();
-    			div2 = element("div");
+    			div4 = element("div");
     			create_component(iconicbutton.$$.fragment);
-    			attr_dev(h1, "class", "svelte-1gceelj");
+    			attr_dev(h1, "class", "svelte-1maig5");
     			add_location(h1, file$1, 24, 4, 624);
-    			attr_dev(header, "class", "svelte-1gceelj");
+    			attr_dev(header, "class", "svelte-1maig5");
     			add_location(header, file$1, 23, 0, 610);
-    			attr_dev(div0, "class", "svelte-1gceelj");
+    			attr_dev(div0, "class", "svelte-1maig5");
     			add_location(div0, file$1, 28, 4, 672);
-    			attr_dev(div1, "class", "icon-group svelte-1gceelj");
-    			add_location(div1, file$1, 31, 4, 768);
-    			attr_dev(div2, "class", "footer svelte-1gceelj");
-    			add_location(div2, file$1, 39, 4, 1089);
-    			attr_dev(main, "class", "svelte-1gceelj");
+    			attr_dev(div1, "class", "icon-container svelte-1maig5");
+    			add_location(div1, file$1, 32, 8, 802);
+    			attr_dev(div2, "class", "icon-container svelte-1maig5");
+    			add_location(div2, file$1, 37, 8, 994);
+    			attr_dev(div3, "class", "icon-group svelte-1maig5");
+    			add_location(div3, file$1, 31, 4, 768);
+    			attr_dev(div4, "class", "footer svelte-1maig5");
+    			add_location(div4, file$1, 43, 4, 1221);
+    			attr_dev(main, "class", "svelte-1maig5");
     			add_location(main, file$1, 27, 0, 660);
     		},
     		l: function claim(nodes) {
@@ -11890,13 +11898,15 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			append_dev(main, div0);
     			append_dev(main, t4);
-    			append_dev(main, div1);
+    			append_dev(main, div3);
+    			append_dev(div3, div1);
     			mount_component(link0, div1, null);
-    			append_dev(div1, t5);
-    			mount_component(link1, div1, null);
+    			append_dev(div3, t5);
+    			append_dev(div3, div2);
+    			mount_component(link1, div2, null);
     			append_dev(main, t6);
-    			append_dev(main, div2);
-    			mount_component(iconicbutton, div2, null);
+    			append_dev(main, div4);
+    			mount_component(iconicbutton, div4, null);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
