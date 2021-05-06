@@ -30,12 +30,16 @@
         شما می توانید از طریق راه های ارتباطی زیر با من در ارتباط باشید
     </div>
     <div class="icon-group">
-        <Link action="copy" addr="0922721591">
-            <GenericIcon icon="Phone" text="09227215691" />
-        </Link>
-        <Link action="copy" addr="mohammadiashkan1384@gmail.com">
-            <GenericIcon icon="Email" text="mohammadiashkan1384" />
-        </Link>
+        <div class="icon-container">
+            <Link action="copy" addr="0922721591">
+                <GenericIcon icon="Phone" text="09227215691" />
+            </Link>
+        </div>
+        <div class="icon-container">
+            <Link action="copy" addr="mohammadiashkan1384@gmail.com">
+                <GenericIcon icon="Email" text="mohammadiashkan1384" />
+            </Link>
+        </div>
     </div>
     <div class="footer">
         <IconicButton text="برگشت" icon_class="arrow-circle-left" on:click={() => pop()}/>
@@ -88,6 +92,13 @@
     @media only screen and (max-width: 650px) {
         .icon-group {
             flex-direction: column;
+        }
+        .icon-container {
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        main {
+            width: 70%;
         }
     }
 </style>
