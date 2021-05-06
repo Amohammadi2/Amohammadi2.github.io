@@ -98,7 +98,7 @@
             margin-bottom: 25px;
         }
         main {
-            width: 70%;
+            width: 85%;
         }
     }
 </style>
