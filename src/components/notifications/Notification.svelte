@@ -16,7 +16,6 @@
 <div class="notification {type}">
     <span class="dismiss" on:click={() => NotificationAPI.delete(pk)}>X</span>
     <span> {msg} </span>
-
     <div class="not-progress"></div>
 </div>
 
@@ -27,6 +26,7 @@
         padding: 10px 8px;
         margin: 5px 0px;
         position: relative;
+        box-shadow: 2px 2px 20px 1px rgba(255, 255, 255, 0.452);
     }
 
     .notification.alert {

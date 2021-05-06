@@ -121,14 +121,6 @@
 	});
 </script>
 
-<div class="notification-box">
-	{#each $notifications as n (n.pk)}
-		<div animate:flip="{{duration: 500}}" transition:fly={{duration: 500, x: 200}}>
-			<Notification type={n.type} msg={n.msg} pk={n.pk}/>
-		</div>
-	{/each}
-</div>
-
 <div class="main-grid">
 	{#if !transitioning}
 		<header class="header">
@@ -350,15 +342,6 @@
 		width: 60%;
 		margin-left: 20%;
 		margin-right: 20%;
-	}
-
-	.notification-box {
-		position: fixed;
-		top: 10px;
-		left: 20px;
-		direction: rtl;
-		width: 300px;
-		z-index: 9999;
 	}
 
 	@media only screen and (max-width: 750px) {

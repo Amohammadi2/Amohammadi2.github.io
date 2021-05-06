@@ -7,7 +7,7 @@
 
     function copy() {
         // Todo: implement a notification system
-        NotificationAPI.success("ID کپی شد");
+        NotificationAPI.success("کپی انجام شد");
         cpy_field.value = addr;
         cpy_field.select();
         console.log(cpy_field);

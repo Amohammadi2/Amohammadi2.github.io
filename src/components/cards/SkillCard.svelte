@@ -22,6 +22,11 @@
         justify-content:center;
         margin: 5px 8px;
         opacity: 0;
+        transition: all 0.15s ease-out;
+        margin: 30px 0;
+    }
+    .skill-card:hover {
+        box-shadow: 0px 2px 15px 1px rgb(226, 226, 226);
     }
     img {
         width: 250px;
@@ -34,5 +39,4 @@
         margin: 5px 20px;
         margin-top: 15px;
     }
-
 </style>
