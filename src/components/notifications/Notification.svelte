@@ -6,9 +6,7 @@
     export let type;
     export let pk;
 
-    let progress_bar_el;
     onMount(() => {
-        //delete notification after 1 second
         setTimeout(() => {
             NotificationAPI.delete(pk);
         }, 3000);
@@ -19,8 +17,7 @@
     <span class="dismiss" on:click={() => NotificationAPI.delete(pk)}>X</span>
     <span> {msg} </span>
 
-    <div class="not-progress" bind:this={progress_bar_el}>
-    </div>
+    <div class="not-progress"></div>
 </div>
 
 <style>
