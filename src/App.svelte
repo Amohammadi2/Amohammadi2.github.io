@@ -5,8 +5,8 @@
 	import { wrap } from "svelte-spa-router/wrap";
 	import Home from "./Home.svelte";
 	import Contact from "./routes/Contact.svelte";
-	import UnderDevelopment from "./routes/UnderDevelopment.svelte";
 	import Loader from "./routes/Loader.svelte";
+	import Projects from "./routes/Projects.svelte";
 	import Notification from "./components/notifications/Notification.svelte";
 	import { cm_wrap_opts } from "./modules/common";
 	import { notifications } from "./stores/store";
@@ -15,6 +15,10 @@
 		'/contact': wrap({
 			...cm_wrap_opts,
 			component: Contact,
+		}),
+		'/projects': wrap({
+			...cm_wrap_opts,
+			component: Projects,
 		}),
 		'/m_loader': wrap({
 			...cm_wrap_opts,
