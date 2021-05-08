@@ -156,7 +156,7 @@
 					on:click={() => renderPage()}
 					/>
 				<IconicButton text="پروژه ها" icon_class="tasks"
-					on:click={() => renderPage()}
+					on:click={() => renderPage('/projects')}
 				/>
 				<IconicButton text="ارتباط با من" icon_class="phone-square"
 					on:click={() => renderPage("/contact")}
