@@ -1,25 +1,12 @@
 <script>
-    import { onMount } from "svelte";
-    import { fade } from "svelte/transition";
     import { pop } from "svelte-spa-router";
     import GenericIcon from "../components/icons/GenericIcon.svelte";
     import Loader from "./Loader.svelte";
     import Link from "../components/utils/Link.svelte";
     import IconicButton from "../components/buttons/IconicButton.svelte";
-    
-
-    let loading = true;
-
-    onMount(() => {
-        setTimeout(() => {loading = false}, 1000);
-    })
 </script>
 
-{#if loading}
-    <div out:fade={{duration: 200}}>
-        <Loader/>
-    </div>
-{/if}
+<Loader/>
 
 <header>
     <h1>ارتباط با من</h1>

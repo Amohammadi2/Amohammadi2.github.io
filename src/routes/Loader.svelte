@@ -1,10 +1,28 @@
-<div class="loader-container">
-    <svg>
-        <circle class="first" cx="53" cy="53" r="50" stroke="rgb(32, 204, 147)" stroke-width="3" fill="none"/>
-        <circle class="second" cx="53" cy="53" r="25" stroke="rgb(32, 204, 147)" stroke-width="3" fill="none"/>
-    </svg>
-    <p>در حال بارگذاری</p>
-</div>
+<script>
+    import { onMount } from "svelte";
+    import { fade } from "svelte/transition";
+    export let autoFadeOut = true;
+    export let duration = 1000;
+    export let loading = true;
+
+    if (autoFadeOut) {
+        onMount(() => {
+            setTimeout(() => {
+                loading = false
+            }, duration);
+        });
+    }
+</script>
+
+{#if loading}
+    <div class="loader-container" out:fade={{duration: 300}}>
+        <svg>
+            <circle class="first" cx="53" cy="53" r="50" stroke="rgb(32, 204, 147)" stroke-width="3" fill="none"/>
+            <circle class="second" cx="53" cy="53" r="25" stroke="rgb(32, 204, 147)" stroke-width="3" fill="none"/>
+        </svg>
+        <p>در حال بارگذاری</p>
+    </div>
+{/if}
 
 <style>
     .loader-container {
