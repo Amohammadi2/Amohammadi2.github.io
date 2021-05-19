@@ -3,13 +3,14 @@
 	import { fly } from "svelte/transition";
 	import Router from "svelte-spa-router";
 	import { wrap } from "svelte-spa-router/wrap";
-	import Home from "./Home.svelte";
+	import { cm_wrap_opts } from "./modules/common";
+	import { notifications } from "./stores/store";import Home from "./Home.svelte";
 	import Contact from "./routes/Contact.svelte";
 	import Loader from "./routes/Loader.svelte";
 	import Projects from "./routes/Projects.svelte";
 	import Notification from "./components/notifications/Notification.svelte";
-	import { cm_wrap_opts } from "./modules/common";
-	import { notifications } from "./stores/store";
+	import Articles from "./routes/Articles.svelte";
+
 	const routes = {
 		'/': Home,
 		'/contact': wrap({
@@ -19,6 +20,10 @@
 		'/projects': wrap({
 			...cm_wrap_opts,
 			component: Projects,
+		}),
+		'/articles': wrap({
+			...cm_wrap_opts,
+			component: Articles
 		}),
 		'/m_loader': wrap({
 			...cm_wrap_opts,
