@@ -153,7 +153,7 @@
 			<div class="btn-group" in:fade={{...getTiming(300)}} out:fade={{duration: 300}}>
 				<IconicButton text="مقالات" icon_class="file-text"
 					style="background-color: rgba(256, 256, 256, 0.3); color: rgb(32, 204, 147); border: 1px solid rgb(32, 204, 147);"
-					on:click={() => renderPage()}
+					on:click={() => renderPage('/articles')}
 					/>
 				<IconicButton text="پروژه ها" icon_class="tasks"
 					on:click={() => renderPage('/projects')}
