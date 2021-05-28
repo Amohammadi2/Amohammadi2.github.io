@@ -10856,19 +10856,19 @@ var app = (function () {
     			create_component(iconicbutton1.$$.fragment);
     			if (img.src !== (img_src_value = "./img/profile.jpg")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "prof");
-    			attr_dev(img, "class", "svelte-1kbjt6k");
+    			attr_dev(img, "class", "svelte-16o8xqp");
     			add_location(img, file$4, 127, 4, 3130);
-    			attr_dev(div0, "class", "user-profile svelte-1kbjt6k");
+    			attr_dev(div0, "class", "user-profile svelte-16o8xqp");
     			add_location(div0, file$4, 126, 3, 3065);
-    			attr_dev(div1, "class", "link-list svelte-1kbjt6k");
+    			attr_dev(div1, "class", "link-list svelte-16o8xqp");
     			add_location(div1, file$4, 129, 3, 3187);
-    			attr_dev(h1, "class", "title svelte-1kbjt6k");
+    			attr_dev(h1, "class", "title svelte-16o8xqp");
     			add_location(h1, file$4, 146, 3, 3733);
-    			attr_dev(p, "class", "description svelte-1kbjt6k");
+    			attr_dev(p, "class", "description svelte-16o8xqp");
     			add_location(p, file$4, 149, 3, 3835);
-    			attr_dev(div2, "class", "btn-group svelte-1kbjt6k");
+    			attr_dev(div2, "class", "btn-group svelte-16o8xqp");
     			add_location(div2, file$4, 152, 3, 3998);
-    			attr_dev(header, "class", "header svelte-1kbjt6k");
+    			attr_dev(header, "class", "header svelte-16o8xqp");
     			add_location(header, file$4, 125, 2, 3037);
     		},
     		m: function mount(target, anchor) {
@@ -11014,7 +11014,7 @@ var app = (function () {
     			create_component(soroushicon.$$.fragment);
     			attr_dev(span, "id", "s-icon");
     			set_style(span, "transform", "translateX(50px)");
-    			attr_dev(span, "class", "svelte-1kbjt6k");
+    			attr_dev(span, "class", "svelte-16o8xqp");
     			add_location(span, file$4, 131, 5, 3313);
     		},
     		m: function mount(target, anchor) {
@@ -11060,7 +11060,7 @@ var app = (function () {
     			span = element("span");
     			create_component(virgoolicon.$$.fragment);
     			attr_dev(span, "id", "v-icon");
-    			attr_dev(span, "class", "svelte-1kbjt6k");
+    			attr_dev(span, "class", "svelte-16o8xqp");
     			add_location(span, file$4, 136, 5, 3484);
     		},
     		m: function mount(target, anchor) {
@@ -11107,7 +11107,7 @@ var app = (function () {
     			create_component(rubikaicon.$$.fragment);
     			attr_dev(span, "id", "r-icon");
     			set_style(span, "transform", "translateX(-50px)");
-    			attr_dev(span, "class", "svelte-1kbjt6k");
+    			attr_dev(span, "class", "svelte-16o8xqp");
     			add_location(span, file$4, 141, 5, 3612);
     		},
     		m: function mount(target, anchor) {
@@ -11251,14 +11251,14 @@ var app = (function () {
     			t11 = space();
     			footer = element("footer");
     			footer.textContent = "footer part";
-    			attr_dev(div0, "class", "container rtl svelte-1kbjt6k");
+    			attr_dev(div0, "class", "container rtl svelte-16o8xqp");
     			add_location(div0, file$4, 163, 2, 4372);
-    			attr_dev(section0, "class", "green-box svelte-1kbjt6k");
+    			attr_dev(section0, "class", "green-box svelte-16o8xqp");
     			add_location(section0, file$4, 162, 1, 4341);
-    			attr_dev(div1, "class", "main-grid svelte-1kbjt6k");
+    			attr_dev(div1, "class", "main-grid svelte-16o8xqp");
     			add_location(div1, file$4, 123, 0, 2987);
     			attr_dev(h10, "align", "center");
-    			attr_dev(h10, "class", "svelte-1kbjt6k");
+    			attr_dev(h10, "class", "svelte-16o8xqp");
     			add_location(h10, file$4, 170, 1, 4464);
     			add_location(section1, file$4, 169, 0, 4452);
     			attr_dev(li0, "class", "splide__slide");
@@ -11274,10 +11274,10 @@ var app = (function () {
     			attr_dev(div3, "class", "splide");
     			add_location(div3, file$4, 173, 0, 4524);
     			attr_dev(h11, "align", "center");
-    			attr_dev(h11, "class", "svelte-1kbjt6k");
+    			attr_dev(h11, "class", "svelte-16o8xqp");
     			add_location(h11, file$4, 190, 1, 4986);
     			attr_dev(textarea, "placeholder", "همین جا مطرحش کن...");
-    			attr_dev(textarea, "class", "svelte-1kbjt6k");
+    			attr_dev(textarea, "class", "svelte-16o8xqp");
     			add_location(textarea, file$4, 191, 1, 5052);
     			attr_dev(input, "type", "email");
     			attr_dev(input, "placeholder", "آدرس ایمیل");
@@ -11285,7 +11285,7 @@ var app = (function () {
     			set_style(input, "width", "100%");
     			add_location(input, file$4, 192, 1, 5136);
     			attr_dev(section2, "id", "contact-form");
-    			attr_dev(section2, "class", "svelte-1kbjt6k");
+    			attr_dev(section2, "class", "svelte-16o8xqp");
     			add_location(section2, file$4, 189, 0, 4956);
     			set_style(footer, "margin-top", "100px");
     			set_style(footer, "color", "transparent");
