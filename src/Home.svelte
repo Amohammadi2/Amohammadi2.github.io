@@ -307,18 +307,6 @@
 		color: white;
 	}
 
-	.grid {
-		display: grid;
-	}
-	
-	.row-3 {
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-
-	.card-header {
-		margin: 0 !important;
-	}
-
 	section textarea {
 		width: 100%;
 		min-height: 200px;
