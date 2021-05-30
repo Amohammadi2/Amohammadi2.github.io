@@ -1,14 +1,18 @@
 <script>
+    import { createEventDispatcher } from "svelte";
     import { onMount } from "svelte";
     import { fade } from "svelte/transition";
     export let autoFadeOut = true;
     export let duration = 1000;
     export let loading = true;
+    
+    const dispatch = createEventDispatcher();
 
     if (autoFadeOut) {
         onMount(() => {
             setTimeout(() => {
-                loading = false
+                loading = false;
+                dispatch("loadend");
             }, duration);
         });
     }
