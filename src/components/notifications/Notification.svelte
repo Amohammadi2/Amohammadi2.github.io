@@ -61,7 +61,7 @@
         content: '';
         display: block;
         height: 3px;
-        animation: progress_animation 3000ms forwards;
+        animation: progress_animation 3000ms linear forwards;
         background-color: orange;
     }
 
