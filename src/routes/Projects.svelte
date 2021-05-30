@@ -1,14 +1,19 @@
 <script>
+    import { onMount } from "svelte";
+
     import Loader from "./Loader.svelte"
     import PostCard from "../components/cards/PostCard.svelte";
     import CardContainer from "../components/cards/CardContainer.svelte";
+
+    import NotificationAPI from "../modules/notificationAPI";
+
 </script>
 
-<Loader />
+<Loader on:loadend={() => NotificationAPI.warning("این قسمت هنوز در حال توسعه است")}/>
 
 <div class="container">
     <CardContainer>
-        <span slot="title">فریمورک ها</span>
+        <span slot="title">تست اول</span>
         <div slot="cards" class="cards-section">
             <PostCard />
             <PostCard />
@@ -30,7 +35,7 @@
         </div>
     </CardContainer>
     <CardContainer>
-        <span slot="title">فریمورک ها</span>
+        <span slot="title">تست دوم</span>
         <div slot="cards" class="cards-section">
             <PostCard />
             <PostCard />
