@@ -12079,27 +12079,29 @@ var app = (function () {
 
     function create_fragment$3(ctx) {
     	let section0;
-    	let t1;
+    	let t;
     	let section1;
 
     	const block = {
     		c: function create() {
     			section0 = element("section");
-    			section0.textContent = "Hello world";
-    			t1 = space();
+    			t = space();
     			section1 = element("section");
-    			attr_dev(section0, "class", "post svelte-zdc5j6");
+    			attr_dev(section0, "class", "post svelte-sm9gqn");
+    			set_style(section0, "background", "url(/img/projects/Django-spa-blog.png)");
+    			set_style(section0, "background-size", "cover");
+    			set_style(section0, "background-repeat", "no-repeat no-repeat");
     			add_location(section0, file$3, 6, 0, 29);
-    			attr_dev(section1, "class", "post svelte-zdc5j6");
+    			attr_dev(section1, "class", "post svelte-sm9gqn");
     			set_style(section1, "display", "none");
-    			add_location(section1, file$3, 9, 0, 82);
+    			add_location(section1, file$3, 13, 0, 210);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section0, anchor);
-    			insert_dev(target, t1, anchor);
+    			insert_dev(target, t, anchor);
     			insert_dev(target, section1, anchor);
     		},
     		p: noop,
@@ -12107,7 +12109,7 @@ var app = (function () {
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(section0);
-    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(t);
     			if (detaching) detach_dev(section1);
     		}
     	};
@@ -12395,7 +12397,7 @@ var app = (function () {
     			t15 = space();
     			create_component(postcard16.$$.fragment);
     			attr_dev(div, "slot", "cards");
-    			attr_dev(div, "class", "cards-section svelte-18sey7c");
+    			attr_dev(div, "class", "cards-section svelte-1vfl6ep");
     			add_location(div, file$1, 16, 8, 500);
     		},
     		m: function mount(target, anchor) {
@@ -12561,7 +12563,7 @@ var app = (function () {
     			t1 = space();
     			create_component(postcard2.$$.fragment);
     			attr_dev(div, "slot", "cards");
-    			attr_dev(div, "class", "cards-section svelte-18sey7c");
+    			attr_dev(div, "class", "cards-section svelte-1vfl6ep");
     			add_location(div, file$1, 38, 8, 1094);
     		},
     		m: function mount(target, anchor) {
@@ -12646,7 +12648,7 @@ var app = (function () {
     			create_component(cardcontainer0.$$.fragment);
     			t1 = space();
     			create_component(cardcontainer1.$$.fragment);
-    			attr_dev(div, "class", "container svelte-18sey7c");
+    			attr_dev(div, "class", "container svelte-1vfl6ep");
     			add_location(div, file$1, 13, 0, 403);
     		},
     		l: function claim(nodes) {
