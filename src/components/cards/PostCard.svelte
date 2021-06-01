@@ -1,11 +1,11 @@
 <script>
-
+    import { isProduction } from "../../modules/utils"
     export let post_img;
-
+    const production = isProduction();
 </script>
 
 <section class="post" style="
-    background: url(/img/projects/{post_img}); 
+    background: url({production? "/public/img/projects" : "/img/projects/"}{post_img}); 
     background-size: cover;
     background-repeat: no-repeat no-repeat;
 ">
