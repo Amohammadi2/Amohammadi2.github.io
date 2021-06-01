@@ -73,11 +73,18 @@
 
     /* Handle */
     .cards-section::-webkit-scrollbar-thumb {
-    background: rgb(205, 22, 211);
+    background: rgb(88, 255, 116);
+    transition: all 0.9s ease-in-out;
     }
 
     /* Handle on hover */
     .cards-section::-webkit-scrollbar-thumb:hover {
-    background: rgb(243, 196, 95);
+    background: rgb(222, 90, 255);
+    }
+
+    @media only screen and (max-width: 550px) {
+        .container {
+            width: 97%; /*better view on small devices*/
+        }
     }
 </style>
