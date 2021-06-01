@@ -13,33 +13,10 @@
 
 <div class="container">
     <CardContainer>
-        <span slot="title">تست اول</span>
+        <span slot="title">پروژه های وب</span>
         <div slot="cards" class="cards-section">
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
-        </div>
-    </CardContainer>
-    <CardContainer>
-        <span slot="title">تست دوم</span>
-        <div slot="cards" class="cards-section">
-            <PostCard />
-            <PostCard />
-            <PostCard />
+            <PostCard post_img="Django-spa-blog.png"/>
+            <PostCard post_img="flashlight.png"/>
         </div>
     </CardContainer>
 </div>
