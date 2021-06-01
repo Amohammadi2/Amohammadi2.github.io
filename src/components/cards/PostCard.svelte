@@ -5,7 +5,7 @@
 </script>
 
 <section class="post" style="
-    background: url({production? "/public/img/projects" : "/img/projects/"}{post_img}); 
+    background: url({production? "/public" : ""}/img/projects/{post_img}); 
     background-size: cover;
     background-repeat: no-repeat no-repeat;
 ">
