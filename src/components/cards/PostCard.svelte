@@ -4,34 +4,66 @@
 
 </script>
 
-<section class="post">
-    Hello world
+<section class="post" style="
+    background: url(/img/projects/Django-spa-blog.png); 
+    background-size: cover;
+    background-repeat: no-repeat no-repeat;
+">
+
 </section>
 <section class="post" style="display: none"></section>
 
 <style>
+    :global(body) {
+        counter-reset: zindex;
+    }
+
     .post {
-        min-width: 200px;
-        height: 300px;
+        counter-increment: zindex;
+        z-index: counter(zindex);
+        min-width: 380px;
+        min-height: 300px;
         background-color: white;
         border-radius: 23px;
         box-sizing: border-box;
         padding: 10px 20px;
-        box-shadow: -5px 2px 15px 1px rgb(226, 226, 226);
-        margin: 10px 0px 10px -28px;
+        box-shadow: -5px 2px 15px 1px rgba(0, 0, 0, 0.473);
+        margin: 10px 0px 10px -180px;
         transition: all 0.2s ease-out;
     }
 
-    .post:hover {
-        transform: scale(1.12);
-        box-shadow: 0px 2px 15px 1px rgb(202, 202, 202);
+
+    @media (pointer: fine) {
+        .post:hover ~ .post {
+            margin-left: 5px;
+        }
+        .post:hover {
+            box-shadow: 0px 2px 15px 1px rgb(202, 202, 202);
+            transform: rotateZ(-10deg) translateX(-30px);
+        }
     }
 
-    .post:hover ~ .post {
-        margin-left: 5px;
+    .post ~ .post {
+        z-index: 3;
     }
+
 
     .post:first-child {
         margin-left: 6px;
     }
+
+    .post-img {
+        width: 100%;
+        border-radius: 23px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .post-img img {
+        width: 100%;
+        height: 100%;
+        border-radius: 23px;
+    }
+
 </style>
