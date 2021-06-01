@@ -12088,13 +12088,13 @@ var app = (function () {
     			t = space();
     			section1 = element("section");
     			attr_dev(section0, "class", "post svelte-sm9gqn");
-    			set_style(section0, "background", "url(/img/projects/Django-spa-blog.png)");
+    			set_style(section0, "background", "url(/img/projects/" + /*post_img*/ ctx[0] + ")");
     			set_style(section0, "background-size", "cover");
     			set_style(section0, "background-repeat", "no-repeat no-repeat");
-    			add_location(section0, file$3, 6, 0, 29);
+    			add_location(section0, file$3, 6, 0, 53);
     			attr_dev(section1, "class", "post svelte-sm9gqn");
     			set_style(section1, "display", "none");
-    			add_location(section1, file$3, 13, 0, 210);
+    			add_location(section1, file$3, 13, 0, 225);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -12104,7 +12104,11 @@ var app = (function () {
     			insert_dev(target, t, anchor);
     			insert_dev(target, section1, anchor);
     		},
-    		p: noop,
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*post_img*/ 1) {
+    				set_style(section0, "background", "url(/img/projects/" + /*post_img*/ ctx[0] + ")");
+    			}
+    		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
@@ -12125,22 +12129,37 @@ var app = (function () {
     	return block;
     }
 
-    function instance$3($$self, $$props) {
+    function instance$3($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("PostCard", slots, []);
-    	const writable_props = [];
+    	let { post_img } = $$props;
+    	const writable_props = ["post_img"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<PostCard> was created with unknown prop '${key}'`);
     	});
 
-    	return [];
+    	$$self.$$set = $$props => {
+    		if ("post_img" in $$props) $$invalidate(0, post_img = $$props.post_img);
+    	};
+
+    	$$self.$capture_state = () => ({ post_img });
+
+    	$$self.$inject_state = $$props => {
+    		if ("post_img" in $$props) $$invalidate(0, post_img = $$props.post_img);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [post_img];
     }
 
     class PostCard extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$3, create_fragment$3, safe_not_equal, {});
+    		init(this, options, instance$3, create_fragment$3, safe_not_equal, { post_img: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -12148,6 +12167,21 @@ var app = (function () {
     			options,
     			id: create_fragment$3.name
     		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*post_img*/ ctx[0] === undefined && !("post_img" in props)) {
+    			console.warn("<PostCard> was created without expected prop 'post_img'");
+    		}
+    	}
+
+    	get post_img() {
+    		throw new Error("<PostCard>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set post_img(value) {
+    		throw new Error("<PostCard>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
@@ -12276,13 +12310,13 @@ var app = (function () {
     const file$1 = "src\\routes\\Projects.svelte";
 
     // (16:8) 
-    function create_title_slot_1(ctx) {
+    function create_title_slot(ctx) {
     	let span;
 
     	const block = {
     		c: function create() {
     			span = element("span");
-    			span.textContent = "تست اول";
+    			span.textContent = "پروژه های وب";
     			attr_dev(span, "slot", "title");
     			add_location(span, file$1, 15, 8, 457);
     		},
@@ -12296,7 +12330,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_title_slot_1.name,
+    		id: create_title_slot.name,
     		type: "slot",
     		source: "(16:8) ",
     		ctx
@@ -12306,203 +12340,62 @@ var app = (function () {
     }
 
     // (17:8) 
-    function create_cards_slot_1(ctx) {
+    function create_cards_slot(ctx) {
     	let div;
     	let postcard0;
-    	let t0;
+    	let t;
     	let postcard1;
-    	let t1;
-    	let postcard2;
-    	let t2;
-    	let postcard3;
-    	let t3;
-    	let postcard4;
-    	let t4;
-    	let postcard5;
-    	let t5;
-    	let postcard6;
-    	let t6;
-    	let postcard7;
-    	let t7;
-    	let postcard8;
-    	let t8;
-    	let postcard9;
-    	let t9;
-    	let postcard10;
-    	let t10;
-    	let postcard11;
-    	let t11;
-    	let postcard12;
-    	let t12;
-    	let postcard13;
-    	let t13;
-    	let postcard14;
-    	let t14;
-    	let postcard15;
-    	let t15;
-    	let postcard16;
     	let current;
-    	postcard0 = new PostCard({ $$inline: true });
-    	postcard1 = new PostCard({ $$inline: true });
-    	postcard2 = new PostCard({ $$inline: true });
-    	postcard3 = new PostCard({ $$inline: true });
-    	postcard4 = new PostCard({ $$inline: true });
-    	postcard5 = new PostCard({ $$inline: true });
-    	postcard6 = new PostCard({ $$inline: true });
-    	postcard7 = new PostCard({ $$inline: true });
-    	postcard8 = new PostCard({ $$inline: true });
-    	postcard9 = new PostCard({ $$inline: true });
-    	postcard10 = new PostCard({ $$inline: true });
-    	postcard11 = new PostCard({ $$inline: true });
-    	postcard12 = new PostCard({ $$inline: true });
-    	postcard13 = new PostCard({ $$inline: true });
-    	postcard14 = new PostCard({ $$inline: true });
-    	postcard15 = new PostCard({ $$inline: true });
-    	postcard16 = new PostCard({ $$inline: true });
+
+    	postcard0 = new PostCard({
+    			props: { post_img: "Django-spa-blog.png" },
+    			$$inline: true
+    		});
+
+    	postcard1 = new PostCard({
+    			props: { post_img: "flashlight.png" },
+    			$$inline: true
+    		});
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			create_component(postcard0.$$.fragment);
-    			t0 = space();
+    			t = space();
     			create_component(postcard1.$$.fragment);
-    			t1 = space();
-    			create_component(postcard2.$$.fragment);
-    			t2 = space();
-    			create_component(postcard3.$$.fragment);
-    			t3 = space();
-    			create_component(postcard4.$$.fragment);
-    			t4 = space();
-    			create_component(postcard5.$$.fragment);
-    			t5 = space();
-    			create_component(postcard6.$$.fragment);
-    			t6 = space();
-    			create_component(postcard7.$$.fragment);
-    			t7 = space();
-    			create_component(postcard8.$$.fragment);
-    			t8 = space();
-    			create_component(postcard9.$$.fragment);
-    			t9 = space();
-    			create_component(postcard10.$$.fragment);
-    			t10 = space();
-    			create_component(postcard11.$$.fragment);
-    			t11 = space();
-    			create_component(postcard12.$$.fragment);
-    			t12 = space();
-    			create_component(postcard13.$$.fragment);
-    			t13 = space();
-    			create_component(postcard14.$$.fragment);
-    			t14 = space();
-    			create_component(postcard15.$$.fragment);
-    			t15 = space();
-    			create_component(postcard16.$$.fragment);
     			attr_dev(div, "slot", "cards");
-    			attr_dev(div, "class", "cards-section svelte-1vfl6ep");
-    			add_location(div, file$1, 16, 8, 500);
+    			attr_dev(div, "class", "cards-section svelte-1ngliqv");
+    			add_location(div, file$1, 16, 8, 505);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			mount_component(postcard0, div, null);
-    			append_dev(div, t0);
+    			append_dev(div, t);
     			mount_component(postcard1, div, null);
-    			append_dev(div, t1);
-    			mount_component(postcard2, div, null);
-    			append_dev(div, t2);
-    			mount_component(postcard3, div, null);
-    			append_dev(div, t3);
-    			mount_component(postcard4, div, null);
-    			append_dev(div, t4);
-    			mount_component(postcard5, div, null);
-    			append_dev(div, t5);
-    			mount_component(postcard6, div, null);
-    			append_dev(div, t6);
-    			mount_component(postcard7, div, null);
-    			append_dev(div, t7);
-    			mount_component(postcard8, div, null);
-    			append_dev(div, t8);
-    			mount_component(postcard9, div, null);
-    			append_dev(div, t9);
-    			mount_component(postcard10, div, null);
-    			append_dev(div, t10);
-    			mount_component(postcard11, div, null);
-    			append_dev(div, t11);
-    			mount_component(postcard12, div, null);
-    			append_dev(div, t12);
-    			mount_component(postcard13, div, null);
-    			append_dev(div, t13);
-    			mount_component(postcard14, div, null);
-    			append_dev(div, t14);
-    			mount_component(postcard15, div, null);
-    			append_dev(div, t15);
-    			mount_component(postcard16, div, null);
     			current = true;
     		},
+    		p: noop,
     		i: function intro(local) {
     			if (current) return;
     			transition_in(postcard0.$$.fragment, local);
     			transition_in(postcard1.$$.fragment, local);
-    			transition_in(postcard2.$$.fragment, local);
-    			transition_in(postcard3.$$.fragment, local);
-    			transition_in(postcard4.$$.fragment, local);
-    			transition_in(postcard5.$$.fragment, local);
-    			transition_in(postcard6.$$.fragment, local);
-    			transition_in(postcard7.$$.fragment, local);
-    			transition_in(postcard8.$$.fragment, local);
-    			transition_in(postcard9.$$.fragment, local);
-    			transition_in(postcard10.$$.fragment, local);
-    			transition_in(postcard11.$$.fragment, local);
-    			transition_in(postcard12.$$.fragment, local);
-    			transition_in(postcard13.$$.fragment, local);
-    			transition_in(postcard14.$$.fragment, local);
-    			transition_in(postcard15.$$.fragment, local);
-    			transition_in(postcard16.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(postcard0.$$.fragment, local);
     			transition_out(postcard1.$$.fragment, local);
-    			transition_out(postcard2.$$.fragment, local);
-    			transition_out(postcard3.$$.fragment, local);
-    			transition_out(postcard4.$$.fragment, local);
-    			transition_out(postcard5.$$.fragment, local);
-    			transition_out(postcard6.$$.fragment, local);
-    			transition_out(postcard7.$$.fragment, local);
-    			transition_out(postcard8.$$.fragment, local);
-    			transition_out(postcard9.$$.fragment, local);
-    			transition_out(postcard10.$$.fragment, local);
-    			transition_out(postcard11.$$.fragment, local);
-    			transition_out(postcard12.$$.fragment, local);
-    			transition_out(postcard13.$$.fragment, local);
-    			transition_out(postcard14.$$.fragment, local);
-    			transition_out(postcard15.$$.fragment, local);
-    			transition_out(postcard16.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
     			destroy_component(postcard0);
     			destroy_component(postcard1);
-    			destroy_component(postcard2);
-    			destroy_component(postcard3);
-    			destroy_component(postcard4);
-    			destroy_component(postcard5);
-    			destroy_component(postcard6);
-    			destroy_component(postcard7);
-    			destroy_component(postcard8);
-    			destroy_component(postcard9);
-    			destroy_component(postcard10);
-    			destroy_component(postcard11);
-    			destroy_component(postcard12);
-    			destroy_component(postcard13);
-    			destroy_component(postcard14);
-    			destroy_component(postcard15);
-    			destroy_component(postcard16);
     		}
     	};
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_cards_slot_1.name,
+    		id: create_cards_slot.name,
     		type: "slot",
     		source: "(17:8) ",
     		ctx
@@ -12511,125 +12404,16 @@ var app = (function () {
     	return block;
     }
 
-    // (38:8) 
-    function create_title_slot(ctx) {
-    	let span;
-
-    	const block = {
-    		c: function create() {
-    			span = element("span");
-    			span.textContent = "تست دوم";
-    			attr_dev(span, "slot", "title");
-    			add_location(span, file$1, 37, 8, 1051);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, span, anchor);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(span);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_title_slot.name,
-    		type: "slot",
-    		source: "(38:8) ",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (39:8) 
-    function create_cards_slot(ctx) {
-    	let div;
-    	let postcard0;
-    	let t0;
-    	let postcard1;
-    	let t1;
-    	let postcard2;
-    	let current;
-    	postcard0 = new PostCard({ $$inline: true });
-    	postcard1 = new PostCard({ $$inline: true });
-    	postcard2 = new PostCard({ $$inline: true });
-
-    	const block = {
-    		c: function create() {
-    			div = element("div");
-    			create_component(postcard0.$$.fragment);
-    			t0 = space();
-    			create_component(postcard1.$$.fragment);
-    			t1 = space();
-    			create_component(postcard2.$$.fragment);
-    			attr_dev(div, "slot", "cards");
-    			attr_dev(div, "class", "cards-section svelte-1vfl6ep");
-    			add_location(div, file$1, 38, 8, 1094);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			mount_component(postcard0, div, null);
-    			append_dev(div, t0);
-    			mount_component(postcard1, div, null);
-    			append_dev(div, t1);
-    			mount_component(postcard2, div, null);
-    			current = true;
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(postcard0.$$.fragment, local);
-    			transition_in(postcard1.$$.fragment, local);
-    			transition_in(postcard2.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(postcard0.$$.fragment, local);
-    			transition_out(postcard1.$$.fragment, local);
-    			transition_out(postcard2.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			destroy_component(postcard0);
-    			destroy_component(postcard1);
-    			destroy_component(postcard2);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_cards_slot.name,
-    		type: "slot",
-    		source: "(39:8) ",
-    		ctx
-    	});
-
-    	return block;
-    }
-
     function create_fragment$1(ctx) {
     	let loader;
-    	let t0;
+    	let t;
     	let div;
-    	let cardcontainer0;
-    	let t1;
-    	let cardcontainer1;
+    	let cardcontainer;
     	let current;
     	loader = new Loader({ $$inline: true });
     	loader.$on("loadend", /*loadend_handler*/ ctx[0]);
 
-    	cardcontainer0 = new CardContainer({
-    			props: {
-    				$$slots: {
-    					cards: [create_cards_slot_1],
-    					title: [create_title_slot_1]
-    				},
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	cardcontainer1 = new CardContainer({
+    	cardcontainer = new CardContainer({
     			props: {
     				$$slots: {
     					cards: [create_cards_slot],
@@ -12643,12 +12427,10 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			create_component(loader.$$.fragment);
-    			t0 = space();
+    			t = space();
     			div = element("div");
-    			create_component(cardcontainer0.$$.fragment);
-    			t1 = space();
-    			create_component(cardcontainer1.$$.fragment);
-    			attr_dev(div, "class", "container svelte-1vfl6ep");
+    			create_component(cardcontainer.$$.fragment);
+    			attr_dev(div, "class", "container svelte-1ngliqv");
     			add_location(div, file$1, 13, 0, 403);
     		},
     		l: function claim(nodes) {
@@ -12656,48 +12438,36 @@ var app = (function () {
     		},
     		m: function mount(target, anchor) {
     			mount_component(loader, target, anchor);
-    			insert_dev(target, t0, anchor);
+    			insert_dev(target, t, anchor);
     			insert_dev(target, div, anchor);
-    			mount_component(cardcontainer0, div, null);
-    			append_dev(div, t1);
-    			mount_component(cardcontainer1, div, null);
+    			mount_component(cardcontainer, div, null);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			const cardcontainer0_changes = {};
+    			const cardcontainer_changes = {};
 
     			if (dirty & /*$$scope*/ 2) {
-    				cardcontainer0_changes.$$scope = { dirty, ctx };
+    				cardcontainer_changes.$$scope = { dirty, ctx };
     			}
 
-    			cardcontainer0.$set(cardcontainer0_changes);
-    			const cardcontainer1_changes = {};
-
-    			if (dirty & /*$$scope*/ 2) {
-    				cardcontainer1_changes.$$scope = { dirty, ctx };
-    			}
-
-    			cardcontainer1.$set(cardcontainer1_changes);
+    			cardcontainer.$set(cardcontainer_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(loader.$$.fragment, local);
-    			transition_in(cardcontainer0.$$.fragment, local);
-    			transition_in(cardcontainer1.$$.fragment, local);
+    			transition_in(cardcontainer.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(loader.$$.fragment, local);
-    			transition_out(cardcontainer0.$$.fragment, local);
-    			transition_out(cardcontainer1.$$.fragment, local);
+    			transition_out(cardcontainer.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			destroy_component(loader, detaching);
-    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(t);
     			if (detaching) detach_dev(div);
-    			destroy_component(cardcontainer0);
-    			destroy_component(cardcontainer1);
+    			destroy_component(cardcontainer);
     		}
     	};
 
