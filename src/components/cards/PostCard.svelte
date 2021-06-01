@@ -1,11 +1,11 @@
 <script>
 
-
+    export let post_img;
 
 </script>
 
 <section class="post" style="
-    background: url(/img/projects/Django-spa-blog.png); 
+    background: url(/img/projects/{post_img}); 
     background-size: cover;
     background-repeat: no-repeat no-repeat;
 ">
