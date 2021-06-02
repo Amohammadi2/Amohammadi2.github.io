@@ -10809,7 +10809,7 @@ var app = (function () {
     	link1 = new Link({
     			props: {
     				addr: "https://virgool.io/@mohammadiashkan1384",
-    				$$slots: { default: [create_default_slot_1$1] },
+    				$$slots: { default: [create_default_slot_1$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11060,7 +11060,7 @@ var app = (function () {
     }
 
     // (136:4) <Link addr="https://virgool.io/@mohammadiashkan1384">
-    function create_default_slot_1$1(ctx) {
+    function create_default_slot_1$2(ctx) {
     	let span;
     	let virgoolicon;
     	let current;
@@ -11096,7 +11096,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$1.name,
+    		id: create_default_slot_1$2.name,
     		type: "slot",
     		source: "(136:4) <Link addr=\\\"https://virgool.io/@mohammadiashkan1384\\\">",
     		ctx
@@ -11788,7 +11788,7 @@ var app = (function () {
     const file$5 = "src\\routes\\Contact.svelte";
 
     // (21:12) <Link action="copy" addr="0922721591">
-    function create_default_slot_1(ctx) {
+    function create_default_slot_1$1(ctx) {
     	let genericicon;
     	let current;
 
@@ -11822,7 +11822,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1.name,
+    		id: create_default_slot_1$1.name,
     		type: "slot",
     		source: "(21:12) <Link action=\\\"copy\\\" addr=\\\"0922721591\\\">",
     		ctx
@@ -11903,7 +11903,7 @@ var app = (function () {
     			props: {
     				action: "copy",
     				addr: "0922721591",
-    				$$slots: { default: [create_default_slot_1] },
+    				$$slots: { default: [create_default_slot_1$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -12812,7 +12812,7 @@ var app = (function () {
     }
 
     // (18:12) <PostCard post_img="Django-spa-blog.png" post_title="Django spa blog">
-    function create_default_slot(ctx) {
+    function create_default_slot_1(ctx) {
     	let div;
     	let script;
     	let script_src_value;
@@ -12838,9 +12838,36 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot.name,
+    		id: create_default_slot_1.name,
     		type: "slot",
     		source: "(18:12) <PostCard post_img=\\\"Django-spa-blog.png\\\" post_title=\\\"Django spa blog\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (21:12) <PostCard post_img="flashlight.png" post_title="flashlight 2D JS">
+    function create_default_slot(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("no video yet");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot.name,
+    		type: "slot",
+    		source: "(21:12) <PostCard post_img=\\\"flashlight.png\\\" post_title=\\\"flashlight 2D JS\\\">",
     		ctx
     	});
 
@@ -12859,7 +12886,7 @@ var app = (function () {
     			props: {
     				post_img: "Django-spa-blog.png",
     				post_title: "Django spa blog",
-    				$$slots: { default: [create_default_slot] },
+    				$$slots: { default: [create_default_slot_1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -12868,7 +12895,9 @@ var app = (function () {
     	postcard1 = new PostCard({
     			props: {
     				post_img: "flashlight.png",
-    				post_title: "flashlight 2D JS"
+    				post_title: "flashlight 2D JS",
+    				$$slots: { default: [create_default_slot] },
+    				$$scope: { ctx }
     			},
     			$$inline: true
     		});
@@ -12898,6 +12927,13 @@ var app = (function () {
     			}
 
     			postcard0.$set(postcard0_changes);
+    			const postcard1_changes = {};
+
+    			if (dirty & /*$$scope*/ 2) {
+    				postcard1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			postcard1.$set(postcard1_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
