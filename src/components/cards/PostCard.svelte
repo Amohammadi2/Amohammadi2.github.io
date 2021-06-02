@@ -1,17 +1,26 @@
 <script>
+    import FullScreenModal from "../modals/FullScreenModal.svelte";
     import { isProduction } from "../../modules/utils"
+    export let post_title;
     export let post_img;
+
+    let modal_closed_state = true;
     const production = isProduction();
 </script>
+
 
 <section class="post" style="
     background: url({production? "/public" : ""}/img/projects/{post_img}); 
     background-size: cover;
     background-repeat: no-repeat no-repeat;
-">
-
+"
+on:click={() => modal_closed_state=false}>
 </section>
 <section class="post" style="display: none"></section>
+
+<FullScreenModal title={post_title} closed={modal_closed_state} on:modalclose={() => modal_closed_state=true}>
+    <slot></slot>
+</FullScreenModal>
 
 <style>
     :global(body) {
