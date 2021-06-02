@@ -13,10 +13,13 @@
 
 <div class="container">
     <CardContainer>
-        <span slot="title">پروژه های وب</span>
+        <span slot="title" dir="rtl"> پروژه های وب</span>
         <div slot="cards" class="cards-section">
-            <PostCard post_img="Django-spa-blog.png"/>
-            <PostCard post_img="flashlight.png"/>
+            <PostCard post_img="Django-spa-blog.png" post_title="Django spa blog">
+                <div id="2606426177"><script type="text/JavaScript" src="https://www.aparat.com/embed/DEtbP?data[rnddiv]=2606426177&data[responsive]=yes&data[title]=%D9%88%D8%A8%D9%84%D8%A7%DA%AF%DB%8C%20%DA%A9%D9%87%20%D8%A8%D8%A7%20django%20%D9%88%20%D8%AA%DA%A9%D9%86%DB%8C%DA%A9%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%DB%8C%20%D8%AA%DA%A9%20%D8%B5%D9%81%D8%AD%D9%87%20%D8%A7%DB%8C%20%D8%B3%D8%A7%D8%AE%D8%AA%D9%85&&recom=none"></script></div>
+            </PostCard>
+            <PostCard post_img="flashlight.png" post_title="flashlight 2D JS">
+            </PostCard>
         </div>
     </CardContainer>
 </div>
