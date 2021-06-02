@@ -10427,6 +10427,8 @@ var app = (function () {
     			$$inline: true
     		});
 
+    	iconicbutton.$on("click", /*click_handler*/ ctx[4]);
+
     	const block = {
     		c: function create() {
     			div = element("div");
@@ -10440,13 +10442,13 @@ var app = (function () {
     			if (img.src !== (img_src_value = "./img/" + /*vectorImg*/ ctx[0])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*vectorImg*/ ctx[0]);
     			attr_dev(img, "class", "svelte-1l5uh0p");
-    			add_location(img, file$9, 7, 4, 175);
+    			add_location(img, file$9, 8, 4, 232);
     			attr_dev(main, "class", "body");
-    			add_location(main, file$9, 8, 4, 226);
+    			add_location(main, file$9, 9, 4, 283);
     			attr_dev(footer, "class", "svelte-1l5uh0p");
-    			add_location(footer, file$9, 11, 4, 299);
+    			add_location(footer, file$9, 12, 4, 356);
     			attr_dev(div, "class", "skill-card svelte-1l5uh0p");
-    			add_location(div, file$9, 6, 0, 145);
+    			add_location(div, file$9, 7, 0, 202);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10517,13 +10519,15 @@ var app = (function () {
     function instance$9($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("SkillCard", slots, ['body']);
-    	let { vectorImg = "" } = $$props;
-    	let { text = "" } = $$props;
+    	let { vectorImg } = $$props;
+    	let { text } = $$props;
     	const writable_props = ["vectorImg", "text"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<SkillCard> was created with unknown prop '${key}'`);
     	});
+
+    	const click_handler = () => NotificationAPI.warning("درحال انجام مراحل تست و توسعه");
 
     	$$self.$$set = $$props => {
     		if ("vectorImg" in $$props) $$invalidate(0, vectorImg = $$props.vectorImg);
@@ -10531,7 +10535,12 @@ var app = (function () {
     		if ("$$scope" in $$props) $$invalidate(2, $$scope = $$props.$$scope);
     	};
 
-    	$$self.$capture_state = () => ({ IconicButton, vectorImg, text });
+    	$$self.$capture_state = () => ({
+    		NotificationAPI,
+    		IconicButton,
+    		vectorImg,
+    		text
+    	});
 
     	$$self.$inject_state = $$props => {
     		if ("vectorImg" in $$props) $$invalidate(0, vectorImg = $$props.vectorImg);
@@ -10542,7 +10551,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [vectorImg, text, $$scope, slots];
+    	return [vectorImg, text, $$scope, slots, click_handler];
     }
 
     class SkillCard extends SvelteComponentDev {
@@ -10556,6 +10565,17 @@ var app = (function () {
     			options,
     			id: create_fragment$9.name
     		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*vectorImg*/ ctx[0] === undefined && !("vectorImg" in props)) {
+    			console.warn("<SkillCard> was created without expected prop 'vectorImg'");
+    		}
+
+    		if (/*text*/ ctx[1] === undefined && !("text" in props)) {
+    			console.warn("<SkillCard> was created without expected prop 'text'");
+    		}
     	}
 
     	get vectorImg() {

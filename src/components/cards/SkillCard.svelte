@@ -1,7 +1,8 @@
 <script>
+    import NotificationAPI from "../../modules/notificationAPI";
     import IconicButton from "../buttons/IconicButton.svelte";
-    export let vectorImg = "";
-    export let text= "";
+    export let vectorImg;
+    export let text;
 </script>
 
 <div class="skill-card">
@@ -10,7 +11,9 @@
         <slot name="body"></slot>
     </main>
     <footer>
-        <IconicButton text={text} icon_class="angle-left" style="width: 250px; margin: auto; text-align: center"/>
+        <IconicButton text={text} icon_class="angle-left" style="width: 250px; margin: auto; text-align: center"
+            on:click={() => NotificationAPI.warning("درحال انجام مراحل تست و توسعه")}
+        />
     </footer>
 </div>
 
