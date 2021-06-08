@@ -20,10 +20,6 @@
 			...cm_wrap_opts,
 			component: Projects,
 		}),
-		'/m_loader': wrap({
-			...cm_wrap_opts,
-			component: Loader
-		}),
 	};
 </script>
 
