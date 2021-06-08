@@ -6,7 +6,6 @@
 	import { cm_wrap_opts } from "./modules/common";
 	import { notifications } from "./stores/store";import Home from "./Home.svelte";
 	import Contact from "./routes/Contact.svelte";
-	import Loader from "./routes/Loader.svelte";
 	import Projects from "./routes/Projects.svelte";
 	import Notification from "./components/notifications/Notification.svelte";
 
