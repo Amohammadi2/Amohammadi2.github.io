@@ -3,6 +3,7 @@
     export let icon_class;
     export let text;
     export let style;
+    export let pulse = false;
 
     let button;
 
@@ -31,7 +32,7 @@
     });
 </script>
 
-<button class="iconic-btn" style={style} bind:this={button} on:click>
+<button class="iconic-btn {pulse && 'pulse'}" style={style} bind:this={button} on:click>
     <span class="fa fa-{icon_class} btn-icon"></span>
     <span class="btn-text">{text}</span>
 </button>
@@ -58,9 +59,21 @@
     .iconic-btn * {
         pointer-events: none;
     }
+    .iconic-btn.pulse {
+        animation: pulse 0.25s linear;
+        animation-iteration-count: 15;
+    }
+
     .btn-icon {
         font-size: 30px;
         margin-right: 8px;
+    }
+
+    @keyframes pulse {
+        to {
+            outline: 3px solid orange;
+            outline-offset: 8px;
+        }
     }
 
     @media only screen and (max-width: 750px) {

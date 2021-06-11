@@ -153,6 +153,7 @@
 			<div class="btn-group" in:fade={{...getTiming(300)}} out:fade={{duration: 300}}>
 				<IconicButton text="پروژه ها" icon_class="tasks"
 					on:click={() => renderPage('/projects')}
+					pulse={true}
 				/>
 				<IconicButton text="ارتباط با من" icon_class="phone-square"
 					on:click={() => renderPage("/contact")}
